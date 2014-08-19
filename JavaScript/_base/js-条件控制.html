@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-条件控制</title>
+</head>
+<body>
+	<script>
+	/* ------ if else------ */
+	/*
+	var rd = Math.random();
+	if(rd > 0.5){
+		console.log(rd + ':' + 'rd大于0.5');
+	}else{
+		console.log(rd + ':' + 'rd小于0.5');
+	}
+	*/
+	
+	/* ------ switch ------ */
+	/**/
+	var rd = Math.random();
+	rd = rd * 10; // 0 - 10 随机数
+	rd = rd.toFixed(0); // 四舍五入为指定小数位数的数字
+	//console.log((13.47).toFixed()); // 13.5
+	//console.log((5.5).toFixed()); // 6
+	rd = Number(rd); // 转型为数字,之前为字符型
+	console.log(rd);
+
+	switch(rd){
+		case 0:
+				console.log('零');
+				console.log(rd);
+				break;
+		case 1:
+				console.log('一');
+				console.log(rd);
+				break;
+		case 2:
+				console.log('二');
+				console.log(rd);
+				break;
+		case 3:
+				console.log('三');
+				console.log(rd);
+				break;
+		case 4:
+				console.log('四');
+				console.log(rd);
+				break;
+		case 5:
+				console.log('五');
+				console.log(rd);
+				break;
+		// 大于5且小于等于10的数字
+		default:
+				console.log('默认');
+				console.log(rd);
+				break;
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环控制</title>
+</head>
+<body>
+	<script>
+	/*
+	// for
+	var i;
+	function fn(){
+		// for,for in,while,do...while
+		for(var i=0; i<5; i++){
+			console.log(i); // 0 1 2 3 4
+		}
+		console.log(i);
+	};
+	console.log(i); // 4; 因为悬浮 所以可以访问到
+	fn();
+	*/
+	/*
+	// for in
+	var obj = {
+		Name : 'wenq',
+		Age : 23,
+		height: 120
+	}
+	// i -> 属性
+	for(var i in obj){
+		console.log(i + ':' + obj[i]);
+	}
+	var arr = [],
+		i = 0;
+	for(arr[i++] in obj){
+		console.log(arr);
+	}
+	console.log(arr);
+	*/
+	/*
+	// while
+	var count = 0;
+
+	while(count < 10){
+		console.log(count);
+		count++;
+	};
+	*/
+	/**/
+	var count = 0;
+	do{
+		console.log(count);
+		count++;
+	}while(count < 10);
+	
+	</script>
+</body>
+</html>

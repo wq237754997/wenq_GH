@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-跳出循环语句</title>
+</head>
+<body>
+	<script>
+	/*
+	// continue
+	var arr = [2,3,0,5,9,''];
+	console.log(arr.length); // 6
+	for(var i=0,Max=arr.length; i<Max; i++){
+		if(!arr[i]){
+			continue;
+		}else{
+			console.log(arr[i]);
+		}
+	}
+	// 2 3 5 9
+	*/
+
+	/*
+	//break
+	var arr = [2,3,0,5,9,''],
+		target = 5,
+		index = -1;
+
+	for(var i=0,Max=arr.length; i<Max; i++){
+		if(arr[i] === target){
+			index = i;
+			break;
+		}
+	}
+	console.log(i); // 3
+	*/
+
+	// return
+	function fn(){
+		return;
+	};
+	console.log(fn()); // undefined
+
+	function square(x,y){
+		return x * y;
+	};
+	console.log(square(2,3)); // 6
+	</script>
+</body>
+</html>

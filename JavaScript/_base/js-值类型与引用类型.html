@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	// 值传递[独自开辟一个地址空间,互不影响]
+	function fn(p){
+		//var p = 'wenq'; // 底层操作,我们是看不见的,这里做模拟操作
+		console.log(p); // 'wenq'
+		//var p = 'a';
+		p = 100;
+		console.log(p); // 100
+	};
+	var name = 'wenq';
+	fn(name);
+	//console.log(p); // p not is defined
+	//console.log(name); // 'wenq'
+	
+	// 扩展思考
+	function a(){
+		var b = 20;
+		b = 90;
+	};
+	a();
+	console.log(b); // b is not defined
+
+	function fn(){
+		var p = 'wenq';
+		console.log(p); // 'wenq'
+		p = 'wend';
+		console.log(p); // 'wend'
+	};
+	fn();
+	console.log(p); // p not is defined
+	*/
+
+	/**/
+	// 按引用传递
+	function fn(p){
+		//console.log(p); // obj{name : 'wenq'};
+		p.name = '传递的是对象的引用...';
+		p = {
+			x : 1,
+			y : 2,
+			z : 3
+		};
+		console.log(p); // p{x:1,y:2,z:3}
+	};
+	var obj = {name : 'wenq'};
+	//console.log(obj);
+	fn(obj);
+	console.log(obj);
+	
+	/*
+	重点：
+		值类型传递的变量保存的只是字面量值;
+		引用类型传递的变量保存的是对象的引用
+	*/
+	</script>
+</body>
+</html>

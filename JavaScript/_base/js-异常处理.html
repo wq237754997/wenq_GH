@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异常处理</title>
+</head>
+<body>
+	<script>
+	function fn(){
+		var arr = null;
+		//console.log(arr[0]);
+		try{
+			console.log(arr[0]);
+		}catch(e){
+			console.log('Error name:' + e.name);
+			console.log('Error message:' + e.message);
+		}finally{
+			console.log('object is null');
+		}
+	};
+	fn();
+	</script>
+</body>
+</html>

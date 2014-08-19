@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+		对象在面向对象思想里面的含义是：对象是由数据以及操作这些数据的方法构成。那么在面向对象里面，
+	this的重要性在于，当对象的方法访问对象的数据时，必须用this去访问。
+	*/
+
+	/*
+	// 面向对象
+	var obj = {
+		Name : 'wenq',
+		Age : 23,
+		Run : function(){
+			console.log(this.Name + ',' + this.Age + ',' + 'now learning JavaScript.');
+			console.log(this); // object
+
+			function fn(){
+				console.log(this); // window
+			};
+			return fn;
+		}
+	};
+	obj.Run()();
+
+	// 面向过程[函数,方法]
+	function fn(num1,num2){
+		return num1 + num2;
+	};
+	var rt = fn(1,2);
+	console.log(rt);
+	*/
+
+	/*
+	// this的不同指向
+	var num1 = 2,
+		num2 = 4;
+	var obj = {
+		num1 : 23,
+		num2 :20,
+		fn : function (){
+			var target = this; // 捕获this[这里的this指向obj对象]
+			return this.num1 - innerFn(this); // 23 - (23 + 20) = -20
+ 
+			function innerFn(o){
+				return o.num1 + o.num2;
+			}
+		},
+		num3 : this.num1, // 这里的this指向window
+		num4 : this.num2
+	};
+	var rt = obj.fn();
+	console.log(rt);
+	console.log(obj.num3 + obj.num4); // 6
+	*/
+
+	/*
+	//实参传递[观察this指向]
+	function showFn(p){
+		console.log(p.Name); // 'wenq'
+		console.log(p.Color); // 'green'
+		console.log(p.weight); // '120kg'
+		p.showColor(); // 'green'
+	};
+	var n = 'wenq';
+	showFn({
+		Name : this.n,
+		Color : 'green',
+		weight : '120kg',
+		showColor : function(){
+			console.log(this.Color);
+		}
+	});
+	// 思考
+	var obj = {
+		p1 : 1,
+		p2 : 2,
+		str : this.p1
+	};
+	console.log(str); // str is not defined
+	*/
+	
+	</script>
+</body>
+</html>
