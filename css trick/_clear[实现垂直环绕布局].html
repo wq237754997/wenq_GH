@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css:clear</title>
+	<style>
+	.a{
+		width: 100px;
+		height: 100px;
+		margin: 0 5px 5px 0;
+	}
+	.a1{
+		background-color: #f00;
+		float: left;
+	}
+	.a2{
+		float: left;
+		background-color: #f0f;
+		clear: left; /* important */
+	}
+	.c{
+		width: 205px;
+		height: 205px;
+		background-color: #0f0;
+		margin: 0 5px 5px 105px;
+	}
+	.clearfix{
+		*zoom: 1;
+	}
+	.clearfix{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<p>clear:left/right: 实现垂直环绕布局。</p>
+	<div class="clearfix">
+		<div class="a a1"></div>
+		<div class="a a2"></div>
+		<div class="c"></div>
+	</div>
+</body>
+</html>
