@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection"content="telephone=no, email=no" />
+	<title>mobile-absolute layout</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<style>
+	.g-hd,
+	.g-bd,
+	.g-ft{
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	.g-hd,
+	.g-ft{
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		color: #fff;
+		background-color: #0078e7;
+	}
+	.g-hd{
+		border-bottom: 1px solid #333;
+		top: 0;
+		z-index: 100;
+	}
+	.g-ft{
+		border-top: 1px solid #333;
+		bottom: 0;
+		z-index: 99;
+	}
+	/* 主体 */
+	.g-bd{
+		top: 45px;
+		bottom: 45px;
+		background-color: #f1f1f1;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 5px;
+	}
+	.m-ct p{
+		text-indent: 2em;
+	}
+	</style>
+</head>
+<body>
+	<div class="g-wrap">
+		<!-- 页眉 -->
+		<header class="g-hd">Header</header>
+		<!-- 主体 -->
+		<div class="g-bd">
+			<div class="m-ct">
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+				
+				<h1>绝对定位布局</h1>
+				<p>
+					关键在于设置g-bd的top，bottom的距离为header和footer的高度。
+				</p>
+			</div>
+		</div>
+		<!-- 页脚 -->
+		<footer class="g-ft">Footer</footer>
+	</div>
+</body>
+</html>

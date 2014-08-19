@@ -1,0 +1,31 @@
+/*
+* @Author: wenq
+* @FileName: media queries
+* @Time: 2014-07-08
+* @Collect: http://nec.netease.com/framework/css-media.html
+*/
+/* ------------------------------------------------------------------------ media ---*/
+/* ------ 横屏 ------ */
+/* ------  竖屏 ------ */
+/* ------  窗口宽度<960,设计宽度=768 ------ */
+/* ------  窗口宽度<768,设计宽度=640  ------ */
+/* ------  窗口宽度<640,设计宽度=480  ------ */
+/* ------  窗口宽度<480,设计宽度=320 ------ */
+/* ------  windows UI 贴靠 ------ */
+/* ------  打印 ------ */
+/*
+	From: http://colly.com/
+
+	@media (min-device-width: 1024px) and (max-width:989px),
+	screen and (max-device-width:480px),
+	(max-device-width:480px) and (orientation:landscape),
+	(min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait) {
+		
+	}
+
+	@media (min-device-width: 1024px) and (max-width:509px),
+	(max-device-width:480px) and (orientation:portrait) {
+		
+	}
+
+*/
