@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+	/* --- reset css --- */
 	*{ margin: 0; padding: 0;}
 	body{
 		font-size: 12px;
 		margin: 10px;
 	}
-	/* --- begin --- */
+	/* --- base css --- */
 	.m{
 		margin-bottom: 20px;
 	}
@@ -19,17 +20,64 @@
 		background-color: #f00;
 	}
 	/* margin和width实现水平居中 */
-	.m1 .box .a{
-		width: 100px; /* important */
-		margin-left: auto; /* important */
-		margin-right: auto; /* important */
+	.m1 .box .a{ /* important */
+		width: 100px; 
+		margin-left: auto;
+		margin-right: auto;
 	}
+
 	/* inline-block实现水平居中方法 */
 	.m2 .box{
 		text-align: center;
 	}
 	.m2 .box .a{
 		display: inline-block;
+	}
+
+	/* 浮动实现水平居中的方法 */
+	.m3 .wrap{ /* important */
+		float: left;
+		width: 100%;
+		background-color: #00f;
+	}
+	.m3 .box{ /* important */
+		float: left;
+		position: relative;
+		left: 50%;
+	}
+	.m3 .box .a{ /* important */
+		float: left;
+		position: relative;
+		right: 50%;
+		z-index: 100;
+	}
+	/* 定位元素与margin实现水平居中的方法一 */
+	.m4 .box .a{ /* important */
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+	/* 定位元素实现水平居中的方法二 */
+	.m5 .box .a{ /* important */
+		position: relative;
+		margin-left: -50px;
+		left: 50%;
+	}
+	/* 定位元素实现水平居中的方法三 */
+	.m6 .wrap{
+		position: relative;
+		height: 100px;
+	}
+	.m6 .box{ /* important */
+		position: absolute;
+		left: 50%;
+	}
+	.m6 .box .a{
+		position: relative;
+		right: 50%;
 	}
 	</style>
 </head>
@@ -51,20 +99,57 @@
 			<div class="a"></div>
 		</div>
 		<p>
-			做点：简单易懂，扩展性强；
+			优点：简单易懂，扩展性强；
 
 			缺点：需要额外处理inline-block的浏览器兼容性。
 		</p>
 	</div>
 	<div class="m m3">
 		<strong>3.浮动实现水平居中的方法</strong>
+		<div class="wrap">
+			<div class="box">
+				<div class="a"></div>
+			</div>
+		</div>
+		<p>
+			优点：兼容性强，扩展性强；
+
+			缺点：实现原理较复杂。	
+		</p>
+	</div>
+	<div class="m m4">
+		<strong>4.定位元素与margin实现水平居中的方法一</strong>
 		<div class="box">
 			<div class="a"></div>
 		</div>
 		<p>
-			做点：简单易懂，扩展性强；
+			优点：兼容性强，扩展性强；
 
-			缺点：需要额外处理inline-block的浏览器兼容性。
+			缺点：实现原理较复杂。
+		</p>
+	</div>
+	<div class="m m5">
+		<strong>5.定位元素实现水平居中的方法二</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			优点：兼容性强；
+
+			缺点：须知道对象宽度，缺乏灵活性。
+		</p>
+	</div>
+	<div class="m m6">
+		<strong>6.定位元素实现水平居中的方法三</strong>
+		<div class="wrap">
+			<div class="box">
+				<div class="a"></div>
+			</div>
+		</div>
+		<p>
+			优点：扩展性强，兼容性强;
+
+			缺点：理解性难。
 		</p>
 	</div>
 </body>
