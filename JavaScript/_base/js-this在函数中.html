@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this在函数中</title>
+</head>
+<body>
+	<script>
+	/*
+	函数调用：
+		普通函数式调用
+		构造函数式调用
+	*/
+
+	/*
+	// 普通函数调用内的this都指向 window
+	console.log(this); // widnow
+
+	function fn(){
+		console.log(this); // window
+
+		function fnInner1(){
+			console.log(this); // window
+		};
+		fnInner1();
+
+		function fnInner2(){
+			console.log(this); // window
+		};
+		fnInner1();
+	};
+	fn();
+	*/
+
+	// 构造函数式调用内的this都指向新创建的对象
+	function Person(Name,Age){
+		console.log(this); // Person
+		this.Name = Name;
+		this.Age = Age;
+		this.Run = function(){
+			console.log(this); // Person
+			return this.Name + ',' + this.Age + '....';
+		};
+	};
+	var p = new Person('wenq',23);
+	console.log(p.Run());
+	</script>
+</body>
+</html>
