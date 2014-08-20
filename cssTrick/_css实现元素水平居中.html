@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	body{
+		font-size: 12px;
+		margin: 10px;
+	}
+	/* --- begin --- */
+	.m{
+		margin-bottom: 20px;
+	}
+	.m .box .a{
+		width: 100px;
+		height: 100px;
+		background-color: #f00;
+	}
+	/* margin和width实现水平居中 */
+	.m1 .box .a{
+		width: 100px; /* important */
+		margin-left: auto; /* important */
+		margin-right: auto; /* important */
+	}
+	/* inline-block实现水平居中方法 */
+	.m2 .box{
+		text-align: center;
+	}
+	.m2 .box .a{
+		display: inline-block;
+	}
+	</style>
+</head>
+<body>
+	<div class="m m1">
+		<strong>1.margin和width实现水平居中</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			优点：实现方法简单易懂，浏览器兼容性强；
+
+			缺点：扩展性差，无法自适应未知项情况。
+		</p>
+	</div>
+	<div class="m m2">
+		<strong>2.inline-block实现水平居中方法</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			做点：简单易懂，扩展性强；
+
+			缺点：需要额外处理inline-block的浏览器兼容性。
+		</p>
+	</div>
+	<div class="m m3">
+		<strong>3.浮动实现水平居中的方法</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			做点：简单易懂，扩展性强；
+
+			缺点：需要额外处理inline-block的浏览器兼容性。
+		</p>
+	</div>
+</body>
+</html>
