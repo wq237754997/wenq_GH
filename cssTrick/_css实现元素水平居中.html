@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>css实现元素水平居中</title>
 	<style>
 	/* --- reset css --- */
 	*{ margin: 0; padding: 0;}
@@ -50,13 +50,18 @@
 		right: 50%;
 	}
 	/* 定位元素与margin实现水平居中的方法一 */
-	.m4 .box .a{ /* important */
+	.m4{
 		position: relative;
+		height: 100px;
+	}
+	.m4 .box .a{ /* important */
+		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	/* 定位元素实现水平居中的方法二 */
 	.m5 .box .a{ /* important */
@@ -77,16 +82,29 @@
 		position: relative;
 		right: 50%;
 	}
+	/* css3 flex实现水平居中 */
+	.m7 .box{
+		/* 这里只做了chrome的兼容 */
+		display: -webkit-box; /* 设置对象为弹性伸缩盒子 */
+		-webkit-box-pack: center; /* 设置对象为弹性伸缩盒子内元素居中对齐 */
+	}
+	/* css3的fit-content实现水平居中方法 */
+	.m8 .box{
+		/* 这里只做了chrome的兼容 */
+		width: -webkit-fit-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	</style>
 </head>
 <body>
 	<div class="m m1">
-		<strong>1.margin和width实现水平居中</strong>
+		<strong>1.margin和width实现水平居中方法</strong>
 		<div class="box">
 			<div class="a"></div>
 		</div>
 		<p>
-			优点：实现方法简单易懂，浏览器兼容性强；
+			优点：实现方法简单易懂，浏览器兼容性强;
 
 			缺点：扩展性差，无法自适应未知项情况。
 		</p>
@@ -97,7 +115,7 @@
 			<div class="a"></div>
 		</div>
 		<p>
-			优点：简单易懂，扩展性强；
+			优点：简单易懂，扩展性强;
 
 			缺点：需要额外处理inline-block的浏览器兼容性。
 		</p>
@@ -110,20 +128,19 @@
 			</div>
 		</div>
 		<p>
-			优点：兼容性强，扩展性强；
+			优点：兼容性强，扩展性强;
 
 			缺点：实现原理较复杂。	
 		</p>
 	</div>
 	<div class="m m4">
-		<strong>4.定位元素与margin实现水平居中的方法一</strong>
+		<strong>4.绝对定位与margin实现水平居中的方法一</strong>
 		<div class="box">
 			<div class="a"></div>
 		</div>
 		<p>
-			优点：兼容性强，扩展性强；
-
-			缺点：实现原理较复杂。
+			优点：这货居然能实现居中;
+			缺点：left top... 代码冗余	
 		</p>
 	</div>
 	<div class="m m5">
@@ -132,9 +149,9 @@
 			<div class="a"></div>
 		</div>
 		<p>
-			优点：兼容性强；
+			优点：实现便捷,兼容性强;
 
-			缺点：须知道对象宽度，缺乏灵活性。
+			缺点：必须事件知道元素的宽度	
 		</p>
 	</div>
 	<div class="m m6">
@@ -147,7 +164,29 @@
 		<p>
 			优点：扩展性强，兼容性强;
 
-			缺点：理解性难。
+			缺点：理解性难。	
+		</p>
+	</div>
+	<div class="m m7">
+		<strong>7.css3 flex弹性伸缩盒子实现水平居中</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			优点：实现便捷，浅显易懂;
+
+			缺点：兼容性差。	
+		</p>
+	</div>
+	<div class="m m8">
+		<strong>8.css3的fit-content实现水平居中方法</strong>
+		<div class="box">
+			<div class="a"></div>
+		</div>
+		<p>
+			优点：实现便捷，浅显易懂;
+
+			缺点：兼容性差。	
 		</p>
 	</div>
 </body>
