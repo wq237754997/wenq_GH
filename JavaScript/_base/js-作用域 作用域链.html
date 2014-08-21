@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域 作用域链</title>
+</head>
+<body>
+	<script>
+	/*
+	作用域：指一个变量的作用范围;
+	作用域链：指一个变量在某个位置上被解析时可供按顺序查找的对象链，这个链上的每个节点都是用一个对象来表示,对象里的属性来自于对应函数的变量。作用域由作用域链实现。
+	*/
+	var obj = {
+	    e:6
+	};
+	 
+	var a = 3;
+	//var e = 0;
+	function outer(){
+	    var b = 4;
+	    function inner(){
+	        var c = 5;  
+	        var d = null;   
+	        with(obj){                
+	            d = e;//这里，d、e两个变量先去哪查找解析？先到obj对象去看看，因此d、e的作用域链都被扩展了，但只有e在obj找到解析，而d没有，它只能沿着作用域链继续查找解析
+	        }
+	        var rs = a + b + c + d;
+	        console.log(rs);       
+	    }
+	    return inner;
+	}
+ 
+	outer()(); // rs = 3+4+5+6 = 12
+	</script>
+</body>
+</html>

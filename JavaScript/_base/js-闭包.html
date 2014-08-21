@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script>
+	/*
+		闭包: 指有权访问另一个作用域中函数的变量的函数
+	*/
+
+	/*
+	var a = 3;
+	function outer(){
+		var b = 4;
+		function inner(){ // 闭包
+			var c = 5;
+			var rt = a + b + c;
+			console.log(rt);
+		};
+		return inner;
+	};
+	outer()(); // 12
+	*/
+
+	/*
+	function cons(v){
+		return v;
+	};
+	var arr = [];
+	for(var i=0;i<5;i++){
+		arr[i] = cons(i);
+	};
+	var num = arr[4]
+	console.log(arr); // [0,1,2,3,4]
+	console.log(num); // 4
+	*/
+
+	/*
+	var arr = [];
+	// i -> 5
+	for(var i=0; i<5; i++){
+		arr[i] = function(){
+			alert(i);
+			return i;
+		};
+	};
+	
+	// arr[0] = function(){ return i};
+	// arr[1] = function(){ return i};
+	// arr[2] = function(){ return i};
+	// arr[3] = function(){ return i};
+	// arr[4] = function(){ return i};
+	var rt = arr[2]();
+	console.log(rt); // 5
+	*/
+
+
+	function fn(){
+		var arr = [];
+
+		for(var i=0; i<5; i++){
+			arr[i] = function(){
+				return i;
+			};
+			/*
+			arr ->
+			arr[0] = function(){ return i};
+			arr[1] = function(){ return i};
+			arr[2] = function(){ return i};
+			arr[3] = function(){ return i};
+			arr[4] = function(){ return i};
+			*/
+		};
+		console.log(i);
+		return arr;
+	};
+
+	var fnArr = fn();
+	var aFn = fnArr[3];
+	var rt = aFn(); // 5 
+	console.log(rt);
+	</script>
+</body>
+</html>
