@@ -1,40 +1,43 @@
-/*
-* @Author: wenq
-* @FileName: mobile reset
-* @Time: 2014-07-07
-* @Collect: http://necolas.github.io/normalize.css/
-*/
+/**
+ * @FileName: mobile reset
+ * 
+ * @author: wenq
+ * 
+ * @Version: 1.0
+ *
+ * @FileFrom: http://necolas.github.io/normalize.css/
+ */
 
-html {
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; /* --- wenq add ---*/
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font-size: 62.5%; /* --- wenq add ---*/
+/* ------------------------------------------------------------------------ reset begin ------ */
+@fontH: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; // 字体降级处理： ios > android > pc
+
+* { // 有待测试
+  -webkit-box-sizing: border-box; //设置盒模型的实际大小不受border,padding的影响
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 
 body {
-  margin: 0;
-  /* --- wenq add ---*/
-  font-size: 1.4rem;
-  line-height: 1.5;
+  font: 12px/1.5 @fontH;
+  //font: 62.5%/1.5 @fontH; // 视情况而定em还是px
   color: #333;
   background-color: #fff;
-  height: 100%;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; // 滚动条快速滚动和回弹
 }
 
+/* ----- html5 elements reset ------ */
 article,
 aside,
 details,
 figcaption,
 figure,
-footer,
 header,
+section,
+footer,
 hgroup,
 main,
 nav,
-section,
 summary {
   display: block;
 }
@@ -46,8 +49,9 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+/* ----- /html5 elements reset ------ */
 
-audio:not([controls]) {
+audio:not([controls]) { // 隐藏所有没有显示控件的audio标签
   display: none;
   height: 0;
 }
@@ -59,88 +63,27 @@ template {
 
 a {
   background: transparent;
-  /* --- wenq add ---*/
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-  color: #08c;
+  color: #333;
 }
 
 a:active {
   outline: 0;
-  color: #069;
 }
 
-abbr[title] {
-  border-bottom: 1px dotted;
+abbr[title] { // 标记一个缩写
+  border-bottom: 1px dotted #333;
 }
 
-b,
-strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-mark {
+mark { // 标记内容
   background: #ff0;
   color: #000;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
 }
 
 img {
   border: 0;
   vertical-align: middle;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-pre {
-  overflow: auto;
-  /* --- wenq add ---*/
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
 }
 
 /* ------ Form Elements reset ------*/
@@ -149,37 +92,32 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
+  color: inherit; // 继承父级字体颜色和字体复合属性
   font: inherit;
-  margin: 0;
 }
 
 button {
-  overflow: visible;
+  overflow: visible; // 额外间距消除
 }
 
 button,
-select {
-  text-transform: none;
-}
-
-button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; // 类似按钮效果[模拟]
   cursor: pointer;
 }
 
 button[disabled],
-html input[disabled] {
+input[disabled] {
   cursor: default;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, 
+input::-moz-focus-inner { // 低版本FireFox:button input文字垂直居中
   border: 0;
   padding: 0;
+  margin: 0;
 }
 
 input {
@@ -188,47 +126,26 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  box-sizing: border-box; // 设置盒模型的实际大小不受border,padding的影响
   padding: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
 input[type="search"] {
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield; // webkit-appearance: 改变元素外观[类似模拟]
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-  border: 0;
-  padding: 0;
-}
-
 textarea {
   overflow: auto;
-  /* --- wenq add ---*/
   resize: vertical;
 }
 
-optgroup {
+optgroup { // 与select配合使用
   font-weight: bold;
 }
+/* ------ /Form Elements reset ------*/
 
 /* ------ table reset ------*/
 table {
@@ -240,17 +157,32 @@ td,
 th {
   padding: 0;
 }
- 
-html, button, input, select, textarea { font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; }
-h1, h2, h3, h4, h5, h6, p, figure, form, blockquote { margin: 0; }
-ul, ol, li, dl, dd { margin: 0; padding: 0; }
-ul, ol { list-style: none outside none; }
-h1, h2, h3 { line-height: 2; font-weight: normal; }
-h1 { font-size: 1.8rem; }
-h2 { font-size: 1.6rem; }
-h3 { font-size: 1.4rem; }
-input::-moz-placeholder, textarea::-moz-placeholder { color: #ccc; }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }
+/* ------ /table reset ------*/ 
 
-* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body,
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,
+pre,code,
+form,fieldset,legend,input,textarea,
+p,blockquote{
+  margin:0;
+  padding:0;
+}
+
+button, input, select, textarea { font-family: @fontH; font-size: 100%;}
+ul, ol { list-style: none outside none; }
+h1, h2, h3 { font-weight: normal; }
+
+/* ------ placeholder提示信息 ------*/
+input::-moz-placeholder,
+textarea::-moz-placeholder, 
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+
+input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder { color: #ccc; }
+/* ------ /placeholder提示信息 ------*/
+
+/* ------------------------------------------------------------------------ /reset end ------ */
