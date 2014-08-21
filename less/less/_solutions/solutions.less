@@ -1,0 +1,30 @@
+/**
+ * @FileName: solutions
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 解决方案[以s-为前缀代表解决方案样式]
+ */
+
+/* ------ 清楚浮动产生的影响 ------ */
+.s-clearfix{
+	*zoom: 1;
+
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+/* ------ /清楚浮动产生的影响 ------ */
+
+/* ------ 禁止用户选择文本 ------ */
+// 仅ie10+(包括ie10) 兼容
+.s-usn{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-m-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/* ------ /禁止用户选择文本 ------ */

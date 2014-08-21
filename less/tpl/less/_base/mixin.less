@@ -1,0 +1,52 @@
+/**
+ * @FileName: mixin[混合]
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 常用复合属性的混合
+ */
+
+/* ------ display:inline-block; ------ */
+.dib{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+/* ------ /display:inline-block; ------ */
+
+/* ------ 超出省略符号显示 ------ */
+.text-overflow{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/* ------ /超出省略符号显示 ------ */
+
+/* ------ placeholder占位符 颜色设置 ------ */ 
+.placeholder(@font_family,@color_val){
+
+	&::-webkit-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-moz-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-o-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+	
+	&:-ms-input-placeholder{
+		color:@color_val;
+	}
+
+	&::input-placeholder{
+		color:@color_val;
+	}
+	
+}
+/* ------ /placeholder占位符 颜色设置 ------ */ 

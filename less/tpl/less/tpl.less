@@ -1,0 +1,21 @@
+/**
+ * @FileName: tpl
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 按需引用样式[出口文件]
+ */
+
+/* ------ 引入less文件 ----- */
+@import "_base/reset";
+@import "_base/mixin";
+@import "_effect/effect";
+@import "_solutions/solutions";
+/* ------ /引入less文件 ----- */
+.text{
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #f00;
+	.text-overflow();
+}
