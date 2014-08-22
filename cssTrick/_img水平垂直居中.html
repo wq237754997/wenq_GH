@@ -6,9 +6,156 @@
 	<style>
 	*{ margin: 0; padding: 0;}
 	body{ font-size: 12px; margin: 10px;}
+	strong{ display:block;}
+	strong,p{ margin: 5px 0;}
+	/* ------ base ------ */
+	.m{
+		width: 150px;
+		height: 100px;
+		border: 1px solid #333;
+	}
+	.m img{
+		border: 1px solid #f00;
+	}
+	/* ------ begin ------ */
+	/* 1.定位+margin实现水平垂直居中 */
+	.m1{ position: relative;}
+	.m1 img{ /* important */
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -29px;
+		margin-top: -29px;
+	}
+	
+	/* 2.table-cell实现水平垂直居中 */
+	.m2{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+	/* 3.空标签实现水平垂直居中 */
+	.m3{
+		text-align: center;
+	}
+	.m3 span{
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		vertical-align: middle;
+	}
+	.m3 img{
+		vertical-align: middle;
+	}
+
+	.m4{
+		display: table;
+		position: relative;
+	}
+	.m4 a{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		/* 兼容ie6 7的hack */
+		*position: absolute;
+		*left: 50%;
+		*top: 50%;
+	}
+	.m4 img{
+		/* 兼容ie6 7的hack */
+		*position: relative;
+		*top: -50%;
+		*left: -50%;
+	}
 	</style>
+	<!--[if lt IE 8]>
+	<style>
+	.m2 span{
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	.m2 img{
+		vertical-align: middle;
+	}
+	</style>
+	<![endif]-->
 </head>
 <body>
-	<div class="m m1"></div>
+	<strong>1.定位+margin实现水平垂直居中</strong>
+	<div class="m m1">
+		<img src="images/img.jpg" alt="" />
+	</div>
+	<p>
+		优点：实现快捷
+		<br/>
+		缺点：需知对象的宽度和高度，受限较大，不灵活
+	</p>
+	
+	<br />
+
+	<strong>2.table-cell实现水平垂直居中</strong>
+	<div class="m m2">
+		<span></span><!-- 此处的span只为ie6 7所做的兼容 -->
+		<img src="images/img.jpg" alt="" />
+	</div>
+	<p>
+		优点：实现快捷，思路清晰
+		<br/>
+		缺点：由于ie6 7不识别table-cell,需要额外做些兼容处理[表示反感~]
+	</p>
+
+	<br />
+
+	<strong>3.空标签实现水平垂直居中</strong>
+	<div class="m m3">
+		<span></span>
+		<img src="images/img.jpg" alt="" />
+	</div>
+	<p>
+		优点：实现快捷，思路清晰
+		<br/>
+		缺点：额外增加了一个无意义空标签
+	</p>
+
+	<br/>
+
+	<strong>4.display:table模拟表格实现图片垂直居中</strong>
+	<div class="m m4">
+		<a href="#">
+			<img src="images/img.jpg" alt="" />
+		</a>
+	</div>
+	<p>
+		优点：实现快捷，思路清晰
+		<br/>
+		缺点：ie6 7不识别disaply: table; so，hack解决~
+	</p>
+
+	<br />
+
+	<strong>5.js[jquery]实现图片垂直居中</strong>
+	<div class="m m4" id="m">
+		<img src="images/img.jpg" alt="" />
+	</div>
+	<p>
+		优点：额...多多动手敲代码
+		<br/>
+		缺点：js实现的话不够灵活
+	</p>
+	<script>
+	window.onload = function(){
+		var m = document.getElementById('m'),
+			mW = m.offsetWidth,
+			mH = m.offsetHeight,
+			img = m.getElementsByTagName('img')[0],
+			imgW = img.offsetWidth,
+			imgH = img.offsetHeight;
+
+		img.style.position = 'absolute';
+		img.style.left = (mW-imgW)/2 + 'px';
+		img.style.top = (mH-imgH)/2 + 'px';
+	};
+	</script>
 </body>
 </html>
