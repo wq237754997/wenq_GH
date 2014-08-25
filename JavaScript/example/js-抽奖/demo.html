@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js抽奖</title>
+	<style type="text/css">
+	*{ margin:0; padding:0;}
+	input, textarea, select, button { font-size: 100%;}
+	.abs{
+		position:absolute;
+		width: 200px;
+	}
+	.rel{ position:relative;}
+	.wrap{ min-height:1000px;}
+	.main{ height:718px; }
+	.con980{
+		width:1000px;
+		margin:0 auto;
+	}
+	.header{ width:100%; height:50px;} 
+	.play{
+		width:723px;
+		height:508px;
+		background-image: url(images/cjw.gif);
+		background-repeat: no-repeat;
+	}
+	td{
+		width:135px;
+		font-family:"微软雅黑";
+		font-size:2px;
+		height: 100px;
+		color: #9A0301;
+	}
+	.playcurr{
+		background-image: url(images/cj_03.gif);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.playnormal{
+		background-color: #FC3;
+		filter: Alpha(Opacity=50);
+		-moz-opacity:0.5;
+		-khtml-opacity: 0.5;
+		opacity: 0.5;
+
+	}
+	.play_btn{
+		width:194px;
+		height:65px;
+		display:block;
+		border:0;
+		cursor:pointer;
+		background-image: url(images/cj_07.gif);
+		background-repeat: no-repeat;
+		text-indent: -1000px;
+	}
+	/*.play_btn:hover{ background-position:0 -115px;}*/
+	.btn_arr{
+		left:279px;
+		top:291px;
+	}
+	</style>
+	<script type="text/javascript">
+	/* 实例
+	var tb=null;
+	var timer=null;
+	var isStart=false;
+	 
+	var arr = []; // 环绕路径的坐标
+
+	arr.push([0,1]);
+	arr.push([0,2]);
+	arr.push([0,3]);
+	arr.push([0,4]);
+
+	arr.push([1,4]);
+	arr.push([2,4]);
+	arr.push([3,4]);
+	arr.push([4,4]);
+
+	arr.push([4,3]);
+	arr.push([4,2]);
+	arr.push([4,1]);
+	arr.push([4,0]);
+
+	arr.push([3,0]);
+	arr.push([2,0]);
+	arr.push([1,0]);
+	arr.push([0,0]);
+
+	var index=0; // 当前位置的索引
+	var x=0; // x坐标
+	var y=0; // y坐标
+	var countRound=0; // 已走圈数
+	var step=0; // 已走的步数
+
+	var randomRound; // 要跑的随机圈数：3~7
+	var randomStep; // 跑完随机圈数后还要走的步数：1-16
+	var hitPos; // 中奖位置：0-15
+
+
+	function start(){	
+		if(!isStart){
+			hitPos=parseInt(Math.random()*16);			 
+			tb = document.getElementById("tb");	
+			randomRound=parseInt(Math.random()*5+3);
+			randomStep=parseInt(Math.random()*11+1) + randomRound;		 
+			timer = setInterval(runIt,200);
+			isStart=true;
+		}	
+	}
+
+	function runIt(){	
+		tb.rows[x].cells[y].className="playnormal";	// 透明层 
+		
+		x = arr[index][0];
+		y = arr[index][1];		
+		tb.rows[x].cells[y].className="playcurr";	// 瓜子图	  
+		
+		index++;
+		if(index>=16){
+			index=0;		
+		}
+		step++;
+		countRound=parseInt(step/16);
+		
+		// 有趣的处理
+		if(step>=5&&countRound<1){ // 步数大于等于5的话加速
+			clearInterval(timer);
+			timer = setInterval(runIt,30);
+		}
+		if(countRound>=randomRound){ // 如果已走的圈数达到了随机圈数，则减速
+			clearInterval(timer);
+			timer = setInterval(runIt,200);
+			randomStep--;
+		}
+		if(randomStep<0){
+			clearInterval(timer); // 停止
+			// 判断是否中奖
+			if(index==hitPos){
+				alert('恭喜您中奖了！');
+			}
+			else{
+				alert('很遗憾，没中奖！中奖位置是：'+hitPos);
+			}
+			// 恢复初始化
+			isStart=false;	
+			countRound=0;	
+			step=0;
+		}
+		
+	}
+	*/
+	/* 了解原理
+	window.onload = function(){
+		var arr = []; // 定义存储路径的数组
+
+		arr.push([0,1]);
+		arr.push([0,2]);
+		arr.push([0,3]);
+		arr.push([0,4]);
+
+		arr.push([1,4]);
+		arr.push([2,4]);
+		arr.push([3,4]);
+		arr.push([4,4]);
+
+		arr.push([4,3]);
+		arr.push([4,2]);
+		arr.push([4,1]);
+		arr.push([4,0]);
+
+		arr.push([3,0]);
+		arr.push([2,0]);
+		arr.push([1,0]);
+		arr.push([0,0]);
+
+		var btn = document.getElementById("btn1"),
+			timer = null;
+		// 调用
+		btn.onclick = function(){
+			start();
+		};
+
+		function start(){
+			timer = setInterval(runIt,100);
+		};
+		//console.log(arr);
+		var x = 0,
+			y = 0,
+			// 定义当前索引值
+			index = 0;
+		function runIt(){
+			var tb = document.getElementById('tb'),
+				td = tb.rows[x].cells[y];
+			
+			td.className = 'playnormal'; // 透明层
+
+			x = arr[index][0];
+			y = arr[index][1];
+			var td = tb.rows[x].cells[y];
+			td.className = 'playcurr'; // 瓜子层
+			index++;
+			//console.log(td);
+			if(index >= 16){
+				index = 0;
+			};
+			
+		};
+	};
+	*/
+	/* 尝试 */ 
+	window.onload = function(){
+		var btn = document.getElementById('btn1'),
+			timer = null,
+			// arr 用于存储路径
+			arr = [];
+
+		arr.push([0,1]);
+		arr.push([0,2]);
+		arr.push([0,3]);
+		arr.push([0,4]);
+
+		arr.push([1,4]);
+		arr.push([2,4]);
+		arr.push([3,4]);
+		arr.push([4,4]);
+
+		arr.push([4,3]);
+		arr.push([4,2]);
+		arr.push([4,1]);
+		arr.push([4,0]);
+
+		arr.push([3,0]);
+		arr.push([2,0]);
+		arr.push([1,0]);
+		arr.push([0,0]);
+
+		btn.onclick = function(){
+			start();
+		};
+
+		function start(){
+			timer = setInterval(runIt,300);
+		};
+
+		var x = 0,
+			y = 0,
+			index = 0;
+		function runIt(){
+			var tb = document.getElementById('tb'),
+				// 单元格
+			 	td = tb.rows[x].cells[y];
+			 td.className = 'playnormal';
+			 
+			 // 路径位置
+			 x = arr[index][0];
+			 y = arr[index][1];
+
+			 var td = tb.rows[x].cells[y];
+			 td.className = 'playcurr';
+			
+			 index++;
+
+			 if(index >= 16){
+			 	index = 0;
+			 };
+
+		};
+	};
+	/* 思考
+	var arr1 = [[0,1],[0,2],[0,3],[0,4],[1,4],[2,4],[3,4],[4,4]];
+	
+	console.log(arr1[0][0]); // 0
+	console.log(arr1[0][1]); // 1
+
+	console.log(arr1[1][0]); // 0
+	console.log(arr1[1][1]); // 2
+
+	console.log(arr1[2][0]); // 0
+	console.log(arr1[2][1]); // 3
+
+	console.log(arr1[3][0]); // 0
+	console.log(arr1[3][1]); // 4
+
+	console.log('断点');
+
+	console.log(arr1[4][0]); // 1
+	console.log(arr1[4][1]); // 4
+
+	console.log(arr1[5][0]); // 2
+	console.log(arr1[5][1]); // 4
+
+	console.log(arr1[6][0]); // 3
+	console.log(arr1[6][1]); // 4
+
+	console.log(arr1[7][0]); // 4
+	console.log(arr1[7][1]); // 4
+	*/
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="play rel">
+			<p class="btn_arr abs">
+				<input value=" 点击领奖" id="btn1" type="button" class="play_btn" />
+			</p>
+			<table width="723" cellpadding="0" cellspacing="1" class="playtab" id="tb">
+				<tr>
+					<td width="143" height="99" align="left" valign="top">
+					</td>
+					<td width="135" align="left" valign="top">
+					</td>
+					<td width="151" align="left" valign="top">
+					</td>
+					<td width="143" align="left" valign="top">
+					</td>
+					<td width="143" align="left" valign="top">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+					<td align="left" valign="top">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>      
+</body>
+</html>
