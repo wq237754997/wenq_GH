@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* 示例 */
+	.m-nav{
+		font-size: 0;
+  		*word-spacing: -1px; /* 根据不同字体字号或许需要做一定的调整 */
+	}
+	.m-nav a{
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		font-size: 12px;
+		letter-spacing: normal;
+  		word-spacing: normal;
+  		vertical-align: top;
+
+		width: 50px;
+		height: 25px;
+		line-height: 25px;
+		text-align: center;
+		background-color: #f00;
+		color: #333;
+		text-decoration: none;
+	}
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		.m-nav{
+			letter-spacing:-5px; /* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+		}
+	}
+	/*
+	less 封装 display: inline-block;[解决空白间隙方案]
+
+	.dib-wrap{
+		font-size: 0;
+		*word-spacing: -1px; // 根据不同字体字号或许需要做一定的调整 
+
+		.dib{
+			display: inline-block;
+			*display:inline;
+			*zoom: 1;
+			*letter-spacing: normal;
+	  		word-spacing: normal;
+	  		vertical-align: top;
+		}
+	}
+	// 在safari不支持font-size: 0;的情况下使用
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		// 需测试
+		.dib-wrap{
+			letter-spacing:-5px; // Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节
+		}
+	}
+	 */
+	</style>
+</head>
+<body>
+	<div class="m-nav">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+	</div>
+</body>
+</html>
