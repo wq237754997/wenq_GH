@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆括号的妙用</title>
+</head>
+<body>
+	<script>
+	/* 
+	1.改变某个表达式某部分的优先级
+	2.调用函数
+	*/
+
+	/*
+	var obj = {
+		a: 20,
+		f: function(){
+			//var that = this;
+			fn(this);
+			function fn(p){
+				console.log(p.a);
+				//console.log(that.a); // 20
+			};
+		}
+	};
+	obj.f();
+	*/
+
+	/*
+	// 自我执行函数[两种方式]: 圆括号把内部的函数定义式,转化为了函数表达式,这个表达式指向函数的引用,所以可以立即执行函数
+	(function fn1(){
+		console.log('w');
+	}());
+
+	(function fn2(){
+		console.log('q');
+	})();
+	*/
+	function fn(p){
+		console.log(p);
+	};
+	fn(function(){return 23;}()); // 23
+
+	// function (){ console.log('自我执行函数')}(); // 错误,不可遗落包含函数的圆括号
+
+	// 圆括号还可以把数字字面量转化为Number封装对象
+	console.log( (14).toString(2) ); // '1110'
+
+	// 不使用圆括号的情况下
+	var num = 14;
+	console.log( num.toString(2) ); // '1110'
+	</script>
+</body>
+</html>
