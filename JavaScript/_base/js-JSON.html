@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+</head>
+<body>
+	<script>
+	/*
+	 1. JSON.stringify(): 将对象转化为JSON对象
+	 2. JSON.parse(): 将JSON对象转化为对象
+	*/
+	var obj = {
+		"a" : 12,
+		"b" : "hello",
+		"c" : false,
+		"d" : [1,2,3,4]
+	};
+	var rt = JSON.stringify(obj);
+	console.log(rt);
+	console.log(JSON.parse(rt));
+	</script>
+</body>
+</html>

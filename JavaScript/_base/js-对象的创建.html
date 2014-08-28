@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的创建</title>
+</head>
+<body>
+	<script>
+	/* 
+	// 1.对象字面量
+	var obj = {
+		Name : 'wenq',
+		Age : 23,
+		Doing : 'learn JavaScript...'
+	};
+	console.log(obj);
+	*/
+
+	/* 
+	// 2.new
+	var obj = new Object();
+	obj.Name = 'wenq';
+	obj.Age = 23;
+	obj.fn = function(){
+		console.log(this.Name);
+	};
+
+	obj.fn();
+	*/
+
+	// 3.create: 方法接受一个参数作为继承的来源
+	var objFater = {
+		a: 1
+	};
+	var obj = Object.create(objFater);
+	obj.x = '1';
+	obj.y = 'w';
+	console.log(obj);
+	console.log(__proto__);
+	
+	</script>
+</body>
+</html>
