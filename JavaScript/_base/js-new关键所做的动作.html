@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new关键所做的动作</title>
+</head>
+<body>
+	<script>
+	/*
+	1.创建一个新对象
+	2.调用构造函数来初始化对象
+	3.返回这个函数
+	*/
+
+	function Bar(b){
+		//console.log(this); // Bar
+		this.a = 3;
+		this.b = b;
+		this.f = function(){
+			if(b){
+				console.log(this.a);
+			}
+		};
+		console.log(this);
+		return this;
+	};
+
+	var obj = new Bar(true);
+	obj.f(); // 3
+	</script>
+</body>
+</html>

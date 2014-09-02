@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>与或非</title>
+</head>
+<body>
+	<script>
+	// 与操作( && ): 1.表达式1为真,返回表达式2; 2.表达式1为假,返回表达式1
+	function fn1(){
+		var a = 0;
+		var b = 2;
+		var f;
+		/* 
+		f = a && a*c;
+		console.log(f); // 0
+
+		f = b && (console.log('w'),9);
+		console.log(f); // 'w' 9
+
+		f = b && '';
+		console.log(f); // ''
+		*/
+		f = a > b && console.log('w');
+		console.log(f); // false
+	};
+
+	//fn1();
+
+	// 或操作( || ): 1.表达式1为真,返回表达式1; 2.表达式1为假,返回表达式2
+	function fn2(){
+		var a = 0;
+		var b = 2;
+		var f;
+		/*
+		f = a || a + b + 3;
+		console.log(f); // 5
+
+		f = a || '';
+		console.log(f); // ''
+
+		f = b || console.log('w');
+		console.log(f); // 2
+
+		f = a < b || console.log('w');
+		console.log(f); // true
+		*/
+
+		f = null;
+		f = f || function(){};
+		console.log(f); // function(){};
+	};
+
+	//fn2();
+
+	//非( ! ): 该操作一定会返回布尔值
+	function fn3(){
+		var a = 20;
+		var b = 30;
+		var f;
+
+		//f = (b > a); // true
+
+		//f = !(b > a); // false
+		//console.log(f);
+
+		f = '';
+		console.log(f); // ''
+		console.log(!f); // true
+	};
+
+	fn3();
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的属性</title>
+</head>
+<body>
+	<script>
+	/*
+	对象的属性分为：属性名,属性值
+	*/
+	var obj = {
+		Name : 'wenq',
+		Age : 23
+	};
+	// 访问对象的两种方式：点操作和中括号操作
+	//console.log(obj.Name); // 'wenq'
+	//console.log(obj['Age']); // 23
+
+	var obj = {
+	    'your car' : '属性名称中间有空格',
+	    '' : '属性名称是长度为0的字符',
+	    ' ' : '属性名称是长度为1的字符',      
+	    'var' : '属性名称是一个保留关键字',
+	    name : '属性名称是一个合法的标识符（不用加引号）' ,
+	    10.00:'小数点为0的属性名称，首先转为正整数，然后转为字符型作为属性'
+	};
+
+	//我还想补充其他的属性
+	obj.color = '黄色';
+	obj['status'] = 'good';
+
+	var rt = null;
+	//rt = obj['your car']; 
+	//rt = obj.'your car'; // 报错!
+	rt = obj[10.00];
+	//console.log(rt);
+
+
+
+	// 动态的为一个空对象增加属性
+	function addProperties(arr){
+		var obj = {};
+		for(var i in arr){
+			var element = arr[i],
+				Name = element[0],
+				Val = element[1];
+			obj[Name] = Val;
+		};
+		return obj;
+	};
+	var rt = null,
+		arr = [];
+	arr.push(['get',function(){ return 'get';}]);
+	arr.push(['post',function(){ return 'post';}]);
+	arr.push(['load',function(){ return 'load';}]);
+	console.log(arr);
+	rt = addProperties(arr);
+	console.log(rt);
+	</script>
+</body>
+</html>
