@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>信息滚动</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	body{ margin: 10px;}
+	li{ list-style: none;}
+
+	.m-marquee{
+		width: 300px;
+		height: 144px;
+		overflow: hidden;
+		padding: 5px;
+		border: 1px solid #333;
+		cursor: pointer;
+	}
+	
+	.m-marquee ul li{
+		font-size: 15px;
+		font-family: "微软雅黑";
+		line-height: 24px;
+	}
+
+	.m-marquee ul li:hover{
+		text-decoration: underline;
+	}
+	</style>
+</head>
+<body>
+	<!-- 文本滚动 -->
+	<div class="m-marquee" id="m-marquee">
+		<!-- 列表一 -->
+		<ul class="list1" id="list1">
+			<li>1.滚动文字</li>
+			<li>2.滚动文字</li>
+			<li>3.滚动文字</li>
+			<li>4.滚动文字</li>
+			<li>5.滚动文字</li>
+			<li>6.滚动文字</li>
+			<li>7.滚动文字</li>
+			<li>8.滚动文字</li>
+			<li>9.滚动文字</li>
+			<li>10.滚动文字</li>
+		</ul>
+		<!-- 列表二 -->
+		<ul class="list2" id="list2"></ul>
+	</div>
+	<script>
+	// 知识点：setTimeout
+	window.onload = function() {
+		var area = document.getElementById('m-marquee'),
+			list = area.getElementsByTagName('ul'),
+			list1 = list[0],
+			list2 = list[1],
+			li_Ht = list1.getElementsByTagName('li')[0].offsetHeight,
+			timer = null,
+			speed = 10,
+			delay = 1500;
+		console.log(li_Ht);
+		list2.innerHTML += list1.innerHTML;
+		area.scrollTop = 0;
+
+		function startMove() {
+			area.scrollTop++;
+			timer = setInterval(scrollUp, speed);
+		};
+
+		function scrollUp() {
+
+			if (area.scrollTop % li_Ht == 0) { // 满足整除条件之后,清除定时器,然后延迟2秒后,重开定时器
+				clearInterval(timer);
+				setTimeout(startMove, delay);
+			} else {
+				area.scrollTop++;
+				if (area.scrollTop >= list1.offsetHeight) {
+					area.scrollTop = 0;
+				}
+			}
+		};
+		// 定时器
+		timer = setTimeout(scrollUp, delay);
+
+	};
+	</script>
+</body>
+</html>

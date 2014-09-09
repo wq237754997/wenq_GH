@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>信息滚动</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	body{ margin: 10px;}
+	li{ list-style: none;}
+
+	.m-marquee{
+		width: 300px;
+		height: 110px;
+		overflow: hidden;
+		padding: 5px;
+		border: 1px solid #333;
+		cursor: pointer;
+	}
+	
+	.m-marquee ul li{
+		font-size: 15px;
+		font-family: "微软雅黑";
+		line-height: 22px;
+	}
+	</style>
+</head>
+<body>
+	<!-- 文本滚动 -->
+	<div class="m-marquee" id="m-marquee">
+		<!-- 列表一 -->
+		<ul class="list1" id="list1">
+			<li>1.滚动文字</li>
+			<li>2.滚动文字</li>
+			<li>3.滚动文字</li>
+			<li>4.滚动文字</li>
+			<li>5.滚动文字</li>
+			<!-- 
+			<li>6.滚动文字</li>
+			<li>7.滚动文字</li>
+			<li>8.滚动文字</li>
+			<li>9.滚动文字</li>
+			<li>10.滚动文字</li>
+			-->
+		</ul>
+		<!-- 列表二 -->
+		<ul class="list2" id="list2">
+			
+		</ul>
+	</div>
+	<script>
+	// 知识点：scrollTop,setInterval,innerHTML,offsetHeight,clearInterval
+	window.onload = function() {
+		var area = document.getElementById('m-marquee'),
+			list = area.getElementsByTagName('ul'),
+			list1 = list[0],
+			list2 = list[1],
+			tiemr = null,
+			speed = 50;
+
+		list2.innerHTML = list1.innerHTML; // 克隆
+
+		function scrollTxt(){
+			if(area.scrollTop >= list1.offsetHeight){
+				area.scrollTop = 0;
+			}else{
+				area.scrollTop++;
+			}
+		};
+
+		timer = setInterval(scrollTxt,speed);
+
+		// 清除定时器
+		area.onmouseover = function(){
+			clearInterval(timer);
+		};
+		// 重开定时器
+		area.onmouseout = function(){
+			timer = setInterval(scrollTxt,speed);
+		};
+		console.log(area.offsetHeight);
+	};
+	</script>
+</body>
+</html>
