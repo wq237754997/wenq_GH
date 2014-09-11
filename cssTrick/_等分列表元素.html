@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text-align:justify 列表元素等分</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	li{ list-style: none;}
+	a{ text-decoration: none;}
+
+	.list{
+		width: 50%;
+		margin: 0 auto;
+		height: 35px;
+		line-height: 35px;
+		background-color: #00f;
+		text-align: justify; /* important */
+	}
+
+	.list li{
+		display: inline-block; /* important */
+		text-align: center;
+		width: 100px;
+		padding: 0 5px;
+		background-color: #0f0;
+	}
+	/* important */
+	.list::after{ 
+		content: "";
+		width: 100%;
+		display: inline-block;
+		font-size: 0;
+		line-height: 0;
+	}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li>
+			<a href="">wenq</a>
+		</li>
+		<li>
+			<a href="">wenq</a>
+		</li>
+		<li>
+			<a href="">wenq</a>
+		</li>
+	</ul>
+</body>
+</html>
