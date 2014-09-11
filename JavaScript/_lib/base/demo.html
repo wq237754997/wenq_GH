@@ -3,21 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title>base</title>
+	<link rel="stylesheet" href="base.css" />
+	<style>
+	#box{
+		font-size: 25px;
+		color: #f0f;
+	}
+	</style>
 </head>
 <body>
-	<div id="box">id</div>
-	<input type="radio" name="js" value="js学习..." selected="selected" />
-	<p>段落</p>
-	<p>段落</p>
-	<p>段落</p>
+	<div id="box" style="background: #f00;">id</div>
+	<input type="radio" name="js" value="js学习..." checked="checked" />
+	<p>段落1</p>
+	<p>段落2</p>
+	<p>段落3</p>
 
 	<!-- js -->
 	<script src="base.js"></script>
 	<script>
 	window.onload = function(){
 		var base = new Base();
-		$().getId('box').css('backgroundColor','#f00');
-		$().getTag('p').css('backgroundColor','#00f');
+		//$().getId('box').css('backgroundColor','#f00');
+		// $().getTag('p').css('backgroundColor','#f0f').html('wenq').click(function(){
+		// 	console.log(this.innerHTML);
+		// });
+		//console.log($().getTag('p').html('www'));
+		console.log($().getId('box').css('color'));
+		var oDiv = document.getElementById('box');
+		// console.log(oDiv.style['background']);
+		console.log(typeof (window.getComputedStyle));
+		console.log(typeof (oDiv.currentStyle));
 	};
 	</script>
 </body>
