@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显隐元素</title>
+	<style>
+	.a{
+		display: none;
+	}
+
+	.b{
+		visibility: hidden;
+	}
+
+	.c{
+		position: absolute;
+		width: 0;
+		height: 0;
+		clip: rect(1px,1px,1px,1px);
+	}
+	
+	.d{
+		text-indent: -9999px;
+	}
+	</style>
+</head>
+<body>
+	<div class="a">wenq</div>
+	<div class="b">wenq</div>
+	<div class="c">wenq</div>
+	<div class="d">wenq</div>
+</body>
+</html>
