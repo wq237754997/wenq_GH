@@ -1,0 +1,19 @@
+/**
+ * @FileName: clearfix
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 清楚浮动产生的影响
+ */
+
+/* @clearfix
+ ------------------------------------------------------------------------------------------------ */
+.clearfix{
+	*zoom: 1;
+
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
