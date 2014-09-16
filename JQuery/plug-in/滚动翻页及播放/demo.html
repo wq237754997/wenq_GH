@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			height:100%;
+		}
+		html{
+			background:#535353;
+			font-family: "微软雅黑";
+			font-size:13px;
+		}
+		li{
+			list-style: none;
+		}
+
+		/* 边栏 */
+		.g-aside{
+			float:right;
+			background:#bedaf6;
+			height:100%;
+			width:200px;
+			overflow: hidden;
+			position: relative;
+		}
+		.g-aside .list{
+			overflow:hidden;
+			margin:16px 0;
+		}
+		.g-aside ul{
+			padding:0 10px;
+			overflow: auto;
+		}
+		.g-aside li{
+			text-align: center;
+			line-height: 26px;
+			color:#333;
+			cursor:pointer;
+		}
+		.g-aside li:hover{
+			background:#ffd1a0;
+		}
+		.g-aside li.on{
+			background:#f98100;
+			color:white;
+		}
+
+		/* 头部 */
+		.g-hd{
+			padding:10px;
+			text-align: center;
+			border-bottom:1px solid #61b0ff;
+			margin-bottom:10px;
+		}
+		.g-hd .btn-play{
+			background:#61b0ff;
+			color:white;
+			line-height: 30px;
+			padding:0 20px;
+			display:inline-block;
+			margin-right:5px;
+			cursor:pointer;
+		}
+		.g-hd label{
+			display:inline-block;
+			background:#ebebeb;
+			color:#999;
+			padding-right:5px;
+			font-size:13px;
+		}
+		.g-hd input{
+			line-height: 20px;
+			padding:5px;
+			border:0;
+			width:3em;
+			font-size:16px;
+			margin-right:5px;
+			text-align: center;
+		}
+		/* 主体 */
+		.g-bd{
+			height:100%;
+			margin-right:200px;
+			overflow: hidden;
+			text-align: center;
+			position: relative;
+		}
+		.g-bd img{
+			max-width: 100%;
+			max-height: 100%;
+			vertical-align: middle;
+			line-height: 1;
+		}
+
+		.g-bd .ico-list{
+			position:absolute;
+			top:10px;
+			right:10px;
+			width:30px;
+			height:30px;
+			background:white url(images/list-unordered-24.png) center center no-repeat;
+			cursor:pointer;
+		}
+		
+		/* 全屏 */
+		.hide-aside .g-aside{
+			display: none;
+		}
+		.hide-aside .g-bd{
+			margin-right:0;
+		}
+		/* 按钮 */
+
+		.disable{
+			display: none!important;
+		}
+		.btn-prev,
+		.btn-next{
+			position: absolute;
+			top:50%;
+			margin-top:-15px;
+			background:rgba(0,0,0,5);
+			text-align: center;
+			width:30px;
+			color:white;
+			font:22px/30px "宋体";
+			cursor:pointer;
+		}
+		.btn-prev{
+			left:10px;
+		}
+		.btn-next{
+			right:10px;
+		}
+		.btn-left,
+		.btn-right{
+			position: absolute;
+			background:rgba(0,0,0,5);
+			text-align: center;
+			width:100%;
+			height:16px;
+			color:white;
+			font:12px/16px "宋体";
+			cursor:pointer;
+			left:0;
+		}
+		.btn-left{
+			top:52px;
+		}
+		.btn-right{
+			bottom:0;
+		}
+	</style>
+</head>
+<body>
+	<div class="g-aside">
+		<div class="g-hd">
+			<a class="btn-play">播放</a>
+			<label>
+				<input type="text" value="1"/>秒
+			</label>
+		</div>
+		<div class="list">
+			<ul id="list"></ul>
+		</div>
+		<span class="btn-left">+</span>
+		<span class="btn-right">+</span>
+	</div>
+	<div class="g-bd">
+		<i class="ico-list"></i>
+		<img src="images/2.GIF"/>
+		<span class="btn-prev">&lt;</span>
+		<span class="btn-next">&gt;</span>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/horizontalScroll.js"></script>
+	<script src="js/test.js"></script>
+</body>
+</html>

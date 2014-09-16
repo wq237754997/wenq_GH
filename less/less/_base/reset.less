@@ -6,10 +6,12 @@
  * @Explain: reset重置文件[不包括HTML5元素重置]
  */
 
-/* ------------------------------------------------------------------------ less文件导入 ------ */
+/* @less文件导入
+------------------------------------------------------------------------------ */
 @import "variable";
 
-/* ------------------------------------------------------------------------ reset begin ------ */
+/* @reset
+------------------------------------------------------------------------------ */
 body,
 dl,dt,dd,
 ul,ol,li,
@@ -50,9 +52,8 @@ textarea{ // 修改ie浏览器下textarea的默认overflow：scroll值,并使其
 input::-ms-clear {
 	display: none;
 }
-/* /------ Form elements reset ------ */
 
-/* ------ Table elements reset ------ */
+// Table elements reset
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -62,7 +63,6 @@ table {
 		padding: 0;
 	}
 }
-/* ------ /Table elements reset ------ */
 
 li{
 	list-style:none;
@@ -86,4 +86,3 @@ a{
 		text-decoration:underline;
 	}
 }
-/* ------------------------------------------------------------------------ /reset end ------ */
