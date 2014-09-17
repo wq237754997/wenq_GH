@@ -165,11 +165,14 @@ h1 {
 .clearfix {
   *zoom: 1;
 }
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
   content: '';
   display: table;
   clear: both;
 }
+/* @global variable
+------------------------------------------------------------------------------------------ */
 /* @form elements
 ------------------------------------------------------------------------------------------ */
 form {
@@ -181,6 +184,28 @@ form {
 }
 .radius {
   border-radius: 3px;
+}
+.item {
+  margin-bottom: 10px;
+}
+.note-float {
+  width: 55px;
+  text-align: right;
+  float: left;
+  line-height: 28px;
+}
+.note-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 55px;
+  text-align: right;
+  height: 28px;
+  line-height: 28px;
+  background-color: #f00;
+}
+.v-align-m {
+  vertical-align: middle;
 }
 .u-input {
   width: 180px;
@@ -227,20 +252,55 @@ form {
   width: 13px;
   height: 13px;
 }
-.item {
-  margin-bottom: 10px;
-  *zoom: 1;
+.label-field-rc {
+  float: left;
+  cursor: pointer;
 }
-.item:after {
-  content: '';
-  display: table;
-  clear: both;
+.label-field-rc input,
+.label-field-rc span {
+  float: left;
+  _display: inline;
 }
-.item .note {
+.label-field-rc .u-checkbox {
+  margin-top: 2.5px;
+  margin-right: 3px;
+}
+.label-field-rc span {
+  margin-right: 10px;
+}
+.ml {
+  margin-left: 60px;
+}
+.link {
+  color: #006bce;
+}
+.form-file {
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  width: 55px;
-  text-align: right;
-  vertical-align: middle;
+  padding: 0px;
+  width: 70px;
+  height: 28px;
+  background-color: #0078e7;
+  position: relative;
+  overflow: hidden;
+}
+.form-file .form-file-replace-text {
+  display: block;
+  line-height: 28px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+}
+.form-file .form-file {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 70px;
+  height: 28px;
+  left: 0;
+  top: 0;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
 }

@@ -25,8 +25,26 @@ h1{
 @import "../_mixin/usn";
 @import "../_mixin/clearfix";
 
+
+/* @global variable
+------------------------------------------------------------------------------------------ */
+// 控制label宽度
+@item_label_width: 55px;
+
+// margin
+@margin-top: ;
+@margin-right: ;
+@margin-bottom: ;
+@margin-left: ;
+
+// color blue
+@color1: #0078e7;
+@color2: #006bce;
+
 /* @form elements
 ------------------------------------------------------------------------------------------ */
+
+// form
 form{
 	.usn();
 }
@@ -35,8 +53,31 @@ form{
 	border-radius: 3px;
 }
 
-// global variable
-@item_label_width: 55px;
+// item
+.item{
+	margin-bottom: 10px;
+}
+
+// label
+.note-float{
+	width: @item_label_width;
+	text-align: right;
+	float: left;
+	line-height: 28px;
+}
+
+.note-inline{
+	.dib();
+	width: @item_label_width;
+	text-align: right;
+	height: 28px;
+	line-height: 28px;
+	background-color: #f00;
+}
+
+.v-align-m{
+	vertical-align: middle;
+}
 
 // input
 .u-input{
@@ -63,33 +104,80 @@ form{
 	border: 0;
 	padding-left: 16px;
 	padding-right: 16px;
-	background-color: #0078e7;
+	background-color: @color1;
 	color: #fff;
 	.transition(background-color,0.5s,linear);
 
 	&:hover{
-		background-color: #006bce;
+		background-color: @color2;
 		cursor: pointer;
 	}
 }
 
-// m-checkbox
+// u-checkbox
 .u-checkbox{
 	.dib();
 	width: 13px;
 	height: 13px;
 }
 
-// item
-.item{
-	margin-bottom: 10px;
-	.clearfix();
+.label-field-rc{
+	float: left;
+	cursor: pointer;
 
-	.note{
-		.dib();
-		width: @item_label_width;
-		text-align: right;
-		//background-color: #f00;
-		vertical-align: middle;
+	input,
+	span{
+		float: left;
+		_display: inline;
+	}
+
+	.u-checkbox{
+		margin-top: 2.5px;
+		margin-right: 3px;
+	}
+
+	span{
+		margin-right: 10px;
+	}
+}
+
+.ml{
+	margin-left: 60px;
+}
+
+// a
+.link{
+	color: #006bce;
+}
+
+// input: file 文件上传
+.form-file{
+	.dib();
+	padding: 0px;
+	width: 70px;
+	height: 28px;
+	background-color: #0078e7;
+	position: relative;
+	overflow: hidden;
+
+	.form-file-replace-text{
+		display: block;
+		line-height: 28px;
+		cursor: pointer;
+		color: #fff;
+		text-align: center;
+	}
+
+	.form-file{
+		opacity: 0;
+		filter: alpha(opacity=0);
+		width: 70px;
+		height: 28px;
+		left: 0;
+		top: 0;
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		z-index: 1;
 	}
 }

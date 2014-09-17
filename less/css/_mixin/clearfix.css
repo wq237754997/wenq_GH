@@ -5,16 +5,14 @@
  *
  * @Explain: 清楚浮动产生的影响
  */
-
 /* @clearfix
  ------------------------------------------------------------------------------------------------ */
-.clearfix{
-	*zoom: 1;
-
-	&::before,
-	&::after{
-		content: '';
-		display: table;
-		clear: both;
-	}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }

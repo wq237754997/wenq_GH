@@ -9,32 +9,62 @@
 
 <body>
     <h1>搜索</h1>
-    <form action="" class="m-form">
-        <input type="text" class="u-input">
-        <input type="button" class="u-btn" value="搜索">
+    <form action="">
+        <!-- input：text 控件 -->
+        <input type="text" class="u-input v-align-m">
+        <!-- input：button 控件 -->
+        <input type="button" class="u-btn v-align-m" value="搜索">
     </form>
 
-    <h1>登录</h1>
-    <form action="">
+    <h1>登录[纵向]</h1>
+    <form>
+
         <div class="item">
-            <label class="note">用户名：</label>
+            <label class="note-float">用户名：</label>
             <input type="text" class="u-input">
         </div>
+
         <div class="item">
-            <label for="" class="note">密码：</label>
+            <label class="note-float">密码：</label>
             <input type="text" class="u-input">
         </div>
-        <div class="item">
-        	<label>
+
+        <div class="item ml form-field-rc">
+        	<label class="label-field-rc">
 	            <input type="checkbox" class="u-checkbox">
 	            <span>记住密码</span>
             </label>
-            <a href="/">忘记密码</a>
+            <a class="link" href="/">忘记密码</a>
         </div>
-        <div class="item">
+
+        <div class="item ml">
             <input type="button" class="u-btn" value="登录">
         </div>
+
     </form>
+
+    <h1>登录[横向]</h1>
+    <form>
+
+        <div class="item">
+            <label>用户名：</label>
+            <input type="text" class="u-input">
+            <label class="">密码：</label>
+            <input type="text" class="u-input">
+            <input type="button" class="u-btn" value="登录">
+            <a href="" class="link">注册</a>
+        </div>
+
+    </form>
+
+    <form>
+        <label class="note-f">上传文件</label>
+        <div class="form-file">
+            <span class="form-file-replace-text">选择文件</span>
+            <input class="form-file" type="file">
+        </div>
+    </form>
+
 </body>
 
 </html>
