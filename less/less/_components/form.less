@@ -6,7 +6,7 @@
  * @Explain: 表单样式
  */
 
-/* @to be delete
+/* @can delete
 ------------------------------------------------------------------------------------------ */
 body{
 	margin: 10px;
@@ -31,7 +31,7 @@ h1{
 // 控制label宽度
 @item_label_width: 55px;
 
-// margin
+// 间距控制
 @margin-top: ;
 @margin-right: ;
 @margin-bottom: ;
@@ -44,29 +44,50 @@ h1{
 /* @form elements
 ------------------------------------------------------------------------------------------ */
 
-// form
+/* ------ form ------ */ 
 form{
 	.usn();
+
+	input,
+	textarea{
+		outline: none;
+	}
 }
 
 .radius{
 	border-radius: 3px;
 }
 
-// item
-.item{
+.all-align{
+
+	*{
+		vertical-align: middle;
+	}
+}
+
+.single-align{
+	vertical-align: middle;
+}
+
+.link{
+	color: #006bce;
+}
+
+
+/* ------ item ------ */ 
+.unit{
 	margin-bottom: 10px;
 }
 
-// label
-.note-float{
+/* ------ label ------*/
+.label-flot{
 	width: @item_label_width;
 	text-align: right;
 	float: left;
 	line-height: 28px;
 }
 
-.note-inline{
+.label-inline{
 	.dib();
 	width: @item_label_width;
 	text-align: right;
@@ -75,11 +96,7 @@ form{
 	background-color: #f00;
 }
 
-.v-align-m{
-	vertical-align: middle;
-}
-
-// input
+/* ------ input[元件：文本框] ------ */ 
 .u-input{
 	width: 180px;
 	height: 18px;
@@ -90,6 +107,7 @@ form{
 	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 	.transition(box-shadow,0.3s,linear);
 
+	&:hover,
 	&:focus{
 		.transition(all,0.5s,linear);
 		border-color: rgba(82, 168, 236, 0.8);
@@ -97,7 +115,7 @@ form{
 	}
 }
 
-// btn
+/* ------ u-btn[元件：按钮] ------ */ 
 .u-btn{
 	height: 28px;
 	line-height: 28px;
@@ -114,7 +132,7 @@ form{
 	}
 }
 
-// u-checkbox
+/* ------ u-checkbox[元件：复选框] ------ */ 
 .u-checkbox{
 	.dib();
 	width: 13px;
@@ -141,17 +159,8 @@ form{
 	}
 }
 
-.ml{
-	margin-left: 60px;
-}
-
-// a
-.link{
-	color: #006bce;
-}
-
-// input: file 文件上传
-.form-file{
+/* ------ input: file 文件上传 ------ */ 
+.m-file{
 	.dib();
 	padding: 0px;
 	width: 70px;
@@ -160,7 +169,7 @@ form{
 	position: relative;
 	overflow: hidden;
 
-	.form-file-replace-text{
+	.file-text{
 		display: block;
 		line-height: 28px;
 		cursor: pointer;
@@ -168,7 +177,7 @@ form{
 		text-align: center;
 	}
 
-	.form-file{
+	.file{
 		opacity: 0;
 		filter: alpha(opacity=0);
 		width: 70px;
@@ -180,4 +189,34 @@ form{
 		position: absolute;
 		z-index: 1;
 	}
+}
+
+/* ------ textarea: 文本域 ------ */ 
+.m-textarea{
+	
+	.label{
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	textarea{
+		border: 1px solid #ccc;
+		.transition(box-shadow,0.3s,linear);
+		resize: none;
+		padding: 3px;
+
+		&:hover,
+		&:focus{
+			.transition(all,0.5s,linear);
+			border-color: rgba(82, 168, 236, 0.8);
+			box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
+		}
+	}
+}
+
+/* ------ radio ------ */ 
+.u-radio{
+	.dib();
+	width: 13px;
+	height: 13px;
 }
