@@ -19,7 +19,7 @@
 	<div id="a"></div>
 
 	<!-- js -->
-	<script src="base.js"></script>
+	<script src="blog/base.js"></script>
 	<script>
 	/* ------
 	API
@@ -34,10 +34,19 @@
 	1.css();
 	2.html();
 	3.click();
+	4.addClass();
+	5.removeClass();
 
 	------ */ 
 	window.onload = function(){
-		$().getId('a').addClass('box1').addClass('box2').addClass('box1');
+		$().getId('a')
+		.addClass('box1')
+		.addClass('box2')
+		.addClass('box1')
+		.removeClass('box1')
+		.addClass('box1')
+		.hide()
+		.show();
 	};
 	</script>
 </body>

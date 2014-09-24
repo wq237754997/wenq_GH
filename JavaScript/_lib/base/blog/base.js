@@ -8,15 +8,18 @@
 
 /* @$: 前端调用[每次new出一个新对象]
  ------------------------------------------------------------------------------------------------*/
-var $ = function() {
-    return new Base();
+var $ = function(_this) {
+    return new Base(_this);
 };
 
 /* @Base: 基础库[构造函数]
  ------------------------------------------------------------------------------------------------*/
-function Base() {
+function Base(_this) {
     // 创建一个数组用于存储获取的节点和节点数组
     this.elements = []; // 私有化
+    if(_this != undefined){
+        this.elements[0] = _this;
+    }
 };
 
 /* @get--: 获取节点
@@ -65,9 +68,13 @@ Base.prototype.getClass = function(className, idName) {
     var node = null;
 
     if (arguments.length == 2) {
+
         node = document.getElementById(idName);
+
     } else {
+
         node = document;
+
     }
 
     var allEles = node.getElementsByTagName('*');
@@ -151,14 +158,71 @@ Base.prototype.click = function(fn) {
 
 /* @addClass: 为Base对象添加名为 addClass 的方法
  ------------------------------------------------------------------------------------------------*/
-Base.prototype.addClass = function(className) {
-    for (var i = 0, Max = this.elements.length; i < Max; i++) {
-        if (!this.elements[i].className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))) {
-            this.elements[i].className += ' ' + className;
-        }
-    }
-    return this;
+Base.prototype.addClass = function(className){
+
+	var str = new RegExp('(\\s|^)' + className + '(\\s|$)');
+
+	for(var i=0,Max=this.elements.length; i<Max; i++){
+
+		if(!this.elements[i].className.match(str)){
+
+			this.elements[i].className += ' ' + className;
+		}
+	}
+
+	return this;
 };
 
 /* @removeClass: 为Base对象添加名为 addClass 的方法
  ------------------------------------------------------------------------------------------------*/
+Base.prototype.removeClass = function(className){
+	var str = new RegExp('(\\s|^)' + className + '(\\s|$)');
+
+	for(var i=0,Max=this.elements.length; i<Max; i++){
+
+		if(this.elements[i].className.match(str)){
+
+			this.elements[i].className = this.elements[i].className.replace(str,' ');
+		}
+	}
+
+	return this;
+};
+
+/* @hide: 为Base对象添加名为 hide 的方法
+ ------------------------------------------------------------------------------------------------*/
+Base.prototype.hide = function(){
+
+	for(var i=0,Max=this.elements.length;i<Max;i++){
+
+		this.elements[i].style.display = 'none';
+	}
+
+	return this;
+};
+
+/* @show: 为Base对象添加名为 show 的方法
+ ------------------------------------------------------------------------------------------------*/
+Base.prototype.show = function(){
+
+	for(var i=0,Max=this.elements.length; i<Max; i++){
+
+		this.elements[i].style.display = 'block';
+	}
+
+	return this;
+};
+
+/* @hover: 为Base对象添加名为 hover 的方法
+ ------------------------------------------------------------------------------------------------*/
+Base.prototype.hover = function(over,out){
+
+    for(var i=0,Max=this.elements.length;i<Max;i++){
+
+        this.elements[i].onmouseover = over;
+
+        this.elements[i].onmouseout = out;
+    }
+
+    return this;
+};
