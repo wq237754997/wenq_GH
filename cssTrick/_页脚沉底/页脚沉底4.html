@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	/* --- 重要部分 --- */
+	body{ min-width: 960px;}
+	#container{
+		min-height: 100%;
+		_height: auto !important;
+		_height: 100%;
+	}
+	#footer{
+		width:100%;
+		height:60px;
+		line-height:60px;
+		background: #ff0;
+	}
+	#page{
+		overflow: hidden;
+		_zoom:1;
+		width: 960px;
+		margin: 0 auto;
+		padding-bottom: 60px;
+		border:1px solid #f00;
+	}
+	/* --- 附加部分  --- */
+	#header{
+		height: 50px;
+		line-height: 50px;
+		background: #f00;
+	}
+	#left,
+	#content,
+	#right{
+		float: left;
+		margin-right: 20px;
+		width: 300px;
+	}
+	#left{
+		background: #00f;
+	}
+	#content{
+		background: #0f0;
+	}
+	#right{
+		background: #0ff;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">Header Section</div>
+		<div id="page" class="clearfix">
+			<div id="left">Left Sidebar</div>
+			<div id="content">Main content</div>
+			<div id="right">Right sidebar</div>
+		</div>
+	</div>
+	<div id="footer">footer</div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(function (){ 
+		$(window).bind("load",function (){ 
+			var footerHt = 0,
+				footerTop = 0,
+				$footer = $("#footer");
+			positionFooter();
+			function positionFooter(){ 
+				footerHt = $footer.height();
+				footerTop = $(window).scrollTop() + $(window).height() - footerHt + "px";
+			};
+			if(($(document.body).height() + footerHt) < $(window).height()){ 
+				$footer.css({"position":"absolute"}).stop().animate({"top":footerTop});
+			}
+			else{ 
+				$footer.css({"position":"static"});
+			}
+		});
+		$(window).scroll(positionFooter).resize(positionFooter);
+	});
+    </script>
+</body>
+</html>

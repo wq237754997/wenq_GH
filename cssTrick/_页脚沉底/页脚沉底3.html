@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	html,
+	body{
+		height: 100%;
+	}
+	body{ min-width: 960px;}
+	#container{
+		min-height: 100%;
+		_height: auto !important;
+		_height: 100%;
+		margin: 0 auto -60px;
+	}
+	.empty,
+	#footer{
+		height: 60px;
+	}
+	#footer{
+		background: #ff0;
+	}
+	#page{
+		overflow: hidden;
+		_zoom:1;
+		width: 960px;
+		margin: 0 auto;
+		padding-bottom: 60px;
+		border:1px solid #f00;
+		height: 2000px;
+	}
+	/* --- --- */
+	#header{
+		height: 50px;
+		line-height: 50px;
+		background: #f00;
+	}
+	#left,
+	#content,
+	#right{
+		float: left;
+		margin-right: 20px;
+		width: 300px;
+	}
+	#left{
+		background: #00f;
+	}
+	#content{
+		background: #0f0;
+	}
+	#right{
+		background: #0ff;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">Header Section</div>
+		<div id="page" class="clearfix">
+			<div id="left">Left Sidebar</div>
+			<div id="content">Main content</div>
+			<div id="right">Right sidebar</div>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div id="footer">footer</div>
+</body>
+</html>
