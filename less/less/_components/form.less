@@ -6,6 +6,13 @@
  * @Explain: 表单样式
  */
 
+/* @less import
+------------------------------------------------------------------------------------------ */
+@import "../_effect/transition";
+@import "../_mixin/dib";
+@import "../_mixin/usn";
+@import "../_mixin/clearfix";
+
 /* @can delete
 ------------------------------------------------------------------------------------------ */
 body{
@@ -18,20 +25,23 @@ h1{
 	margin: 10px 0;
 }
 
-/* @less import
------------------------------------------------------------------------------------------- */
-@import "../_effect/transition";
-@import "../_mixin/dib";
-@import "../_mixin/usn";
-@import "../_mixin/clearfix";
-
+input,
+select,
+textarea{
+	outline: none;
+}
 
 /* @global variable
 ------------------------------------------------------------------------------------------ */
 // 控制label宽度
 @item_label_width: 55px;
 
+// 控件宽高
+@g-Wt: 150px;
+@g-Ht: 20px;
+
 // 间距控制
+@margin-all: ;
 @margin-top: ;
 @margin-right: ;
 @margin-bottom: ;
@@ -41,23 +51,19 @@ h1{
 @color1: #0078e7;
 @color2: #006bce;
 
+// color green
+@btn-color: #8acb49;
+
 /* @form elements
 ------------------------------------------------------------------------------------------ */
 
-/* ------ form ------ */ 
+/* @form
+------------------------------------------------------------------------------------------ */
 form{
 	.usn();
-
-	input,
-	textarea{
-		outline: none;
-	}
 }
 
-.radius{
-	border-radius: 3px;
-}
-
+// 所有子元素之间的中线对齐
 .all-align{
 
 	*{
@@ -65,78 +71,36 @@ form{
 	}
 }
 
+// 单个元素之间的中线对齐
 .single-align{
 	vertical-align: middle;
 }
 
+// 锚点颜色
 .link{
 	color: #006bce;
 }
 
-
-/* ------ item ------ */ 
+// 单元之间的间距
 .unit{
 	margin-bottom: 10px;
 }
 
-/* ------ label ------*/
+// label
 .label-flot{
 	width: @item_label_width;
 	text-align: right;
 	float: left;
-	line-height: 28px;
+	line-height: @g-Ht;;
 }
 
 .label-inline{
 	.dib();
 	width: @item_label_width;
 	text-align: right;
-	height: 28px;
-	line-height: 28px;
+	height: @g-Ht;
+	line-height: @g-Ht;;
 	background-color: #f00;
-}
-
-/* ------ input[元件：文本框] ------ */ 
-.u-input{
-	width: 180px;
-	height: 18px;
-	line-height: 18px;
-	padding: 4px;
-	border: 1px solid #ccc;
-	outline: none;
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-	.transition(box-shadow,0.3s,linear);
-
-	&:hover,
-	&:focus{
-		.transition(all,0.5s,linear);
-		border-color: rgba(82, 168, 236, 0.8);
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
-	}
-}
-
-/* ------ u-btn[元件：按钮] ------ */ 
-.u-btn{
-	height: 28px;
-	line-height: 28px;
-	border: 0;
-	padding-left: 16px;
-	padding-right: 16px;
-	background-color: @color1;
-	color: #fff;
-	.transition(background-color,0.5s,linear);
-
-	&:hover{
-		background-color: @color2;
-		cursor: pointer;
-	}
-}
-
-/* ------ u-checkbox[元件：复选框] ------ */ 
-.u-checkbox{
-	.dib();
-	width: 13px;
-	height: 13px;
 }
 
 .label-field-rc{
@@ -159,19 +123,67 @@ form{
 	}
 }
 
-/* ------ input: file 文件上传 ------ */ 
+/* @form 控件
+------------------------------------------------------------------------------------------ */
+
+/* ------ u-input[元件：文本框] ------ */ 
+.u-input{
+	width: @g-Wt;
+	height: (@g-Ht - 10);
+	line-height: (@g-Ht - 10);
+	padding: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+	.transition(box-shadow,0.3s,linear);
+	
+	/*按需添加*/
+	&:hover,
+	&:focus{
+		.transition(all,0.5s,linear);
+		border-color: rgba(82, 168, 236, 0.8);
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
+	}
+	
+}
+
+/* ------ u-btn[元件：按钮] ------ */ 
+.u-btn{
+	height: @g-Ht;
+	line-height: @g-Ht;
+	border: 0;
+	padding-left: 16px;
+	padding-right: 16px;
+	background-color: @btn-color;
+	color: #fff;
+	.transition(background-color,0.5s,linear);
+
+	&:hover{
+		background-color: @color2;
+		cursor: pointer;
+	}
+}
+
+/* ------ u-checkbox[元件：复选框] ------ */ 
+.u-checkbox{
+	.dib();
+	width: 13px;
+	height: 13px;
+}
+
+/* ------ file[模块：文件上传] ------ */ 
 .m-file{
 	.dib();
 	padding: 0px;
 	width: 70px;
-	height: 28px;
-	background-color: #0078e7;
+	height: @g-Ht;
+	background-color: @btn-color;
 	position: relative;
 	overflow: hidden;
 
 	.file-text{
 		display: block;
-		line-height: 28px;
+		line-height: @g-Ht;
 		cursor: pointer;
 		color: #fff;
 		text-align: center;
@@ -181,7 +193,7 @@ form{
 		opacity: 0;
 		filter: alpha(opacity=0);
 		width: 70px;
-		height: 28px;
+		height: @g-Ht;
 		left: 0;
 		top: 0;
 		display: block;
@@ -191,7 +203,8 @@ form{
 	}
 }
 
-/* ------ textarea: 文本域 ------ */ 
+/* ------ textarea[模块：文本域] ------ */
+@textArea-Wt: 255px;
 .m-textarea{
 	
 	.label{
@@ -200,21 +213,24 @@ form{
 	}
 
 	textarea{
+		width: @textArea-Wt;
 		border: 1px solid #ccc;
 		.transition(box-shadow,0.3s,linear);
 		resize: none;
 		padding: 3px;
-
+		
+		/*按需添加*/
 		&:hover,
 		&:focus{
 			.transition(all,0.5s,linear);
 			border-color: rgba(82, 168, 236, 0.8);
 			box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
 		}
+		
 	}
 }
 
-/* ------ radio ------ */ 
+/* ------ radio[元件：单选框] ------ */ 
 .u-radio{
 	.dib();
 	width: 13px;
