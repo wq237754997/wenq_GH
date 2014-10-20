@@ -5,3 +5,93 @@
  *
  * @Explain: 按钮样式
  */
+
+/* @import less
+------------------------------------------------------------------------------------------ */
+@import "../_mixin/dib";
+@import "../_effect/linearGradient";
+
+/* @u-btn
+------------------------------------------------------------------------------------------ */
+// white -> gray
+@bgColor-W-G-T: #fefefe;
+@bgColor-W-G-B: #e3e3e3;
+
+// blue
+@bgColor-B-T: #7daee8;
+@bgColor-B-B: #6493c9;
+
+// red
+@bgColor-R-T: #e04e3b;
+@bgColor-R-B: #ce3e2b;
+
+/* ------------------ base button ------------------ */
+.u-btn-base{
+	/* base configuration */ 
+	.dib();
+	border-width: 1px ;
+	border-style: solid;
+	cursor: pointer;
+	padding: 5px 10px;
+	border-radius: 3px;
+
+	//* ---------------------------------------- [white -> gray] */
+	.linearGradient(@bgColor-W-G-T,@bgColor-W-G-B);
+	border-color: #ccc;
+	
+	&:hover{
+		//* ---------------------------------------- [white -> gray] */
+		.linearGradient(@bgColor-W-G-B,@bgColor-W-G-T);
+	}
+}
+
+.u-btn-1{
+	/* use configuration */
+
+	//* ---------------------------------------- [blue] */ 
+	.linearGradient(@bgColor-B-T,@bgColor-B-B);
+	border-color: #5a8ac0;
+	color: #fff;
+
+	&:hover{
+		//* ---------------------------------------- [blue] */
+		.linearGradient(@bgColor-B-B,@bgColor-B-T);
+	}
+}
+
+.u-btn-2{
+	/* use configuration */ 
+
+	//* ---------------------------------------- [blue] */ 
+	.linearGradient(@bgColor-R-T,@bgColor-R-B);
+	border-color: #C13523;
+	color: #fff;
+
+	&:hover{
+		//* ---------------------------------------- [red] */
+		.linearGradient(@bgColor-R-B,@bgColor-R-T);
+	}
+}
+
+/* ------------------ icon button ------------------ */
+.u-btn-icon{
+	font-size: 0;
+
+	i,
+	span{
+		.dib();
+		vertical-align: middle;
+	}
+	
+	i{
+		width: 16px;
+		height: 16px;
+		background-color: #f00;
+		background: url(../images/download.png) no-repeat left center;
+	}
+
+	span{
+		font-size: 12px;
+		padding-left: 5px;
+	}
+}

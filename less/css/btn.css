@@ -1,0 +1,230 @@
+/**
+ * @FileName: button[组件]
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 按钮样式
+ */
+/* @less import
+------------------------------------------------------------------------------------------ */
+/**
+ * @FileName: reset
+ * 
+ * @Author: wenq
+ *
+ * @Explain: reset重置文件[不包括HTML5元素重置]
+ */
+/* @less文件导入
+------------------------------------------------------------------------------ */
+/**
+ * @FileName: variable
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 常用变量
+ */
+/* ------ 字体变量 ------ */
+/* 宋体 */
+/* 微软雅黑 */
+/* 手机端字体 */
+/* @reset
+------------------------------------------------------------------------------ */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 12px/1.5 '\5B8B\4F53', Tahoma, Helvetica, Arial;
+  color: #333;
+  background-color: #fff;
+}
+/* ------ Form elements reset ------ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+input,
+button {
+  overflow: visible;
+}
+textarea {
+  overflow: auto;
+  color: inherit;
+  font: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table th,
+table td {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+iframe {
+  border: 0;
+  vertical-align: top;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: underline;
+}
+/**
+ * @FileName: button[按钮]
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 按钮样式
+ */
+/* @import less
+------------------------------------------------------------------------------------------ */
+/**
+ * @FileName: dib
+ * 
+ * @Author: wenq
+ *
+ * @Explain: display:inline-block[行内块化元素]
+ */
+/* @dib
+ ------------------------------------------------------------------------------------------------ */
+.dib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/**
+ * @FileName: 渐变封装
+ * 
+ * @Author: ken
+ * 
+ * @Explain: 线性渐变，只支持水平和垂直方向。滤镜在IE6、IE7中须配合width或者height属性方可生效
+ */
+/* @u-btn
+------------------------------------------------------------------------------------------ */
+/* ------------------ base button ------------------ */
+.u-btn-base {
+  /* base configuration */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border-width: 1px ;
+  border-style: solid;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#e3e3e3));
+  background-image: -webkit-linear-gradient(top, #fefefe, #e3e3e3);
+  background-image: -moz-linear-gradient(top, #fefefe, #e3e3e3);
+  background-image: -o-linear-gradient(top, #fefefe, #e3e3e3);
+  background-image: -ms-linear-gradient(top, #fefefe, #e3e3e3);
+  background-image: linear-gradient(top, #fefefe, #e3e3e3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffefefe, endColorstr=#ffe3e3e3, GradientType=0);
+  border-color: #ccc;
+}
+.u-btn-base:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#fefefe));
+  background-image: -webkit-linear-gradient(top, #e3e3e3, #fefefe);
+  background-image: -moz-linear-gradient(top, #e3e3e3, #fefefe);
+  background-image: -o-linear-gradient(top, #e3e3e3, #fefefe);
+  background-image: -ms-linear-gradient(top, #e3e3e3, #fefefe);
+  background-image: linear-gradient(top, #e3e3e3, #fefefe);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffe3e3e3, endColorstr=#fffefefe, GradientType=0);
+}
+.u-btn-1 {
+  /* use configuration */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7daee8), to(#6493c9));
+  background-image: -webkit-linear-gradient(top, #7daee8, #6493c9);
+  background-image: -moz-linear-gradient(top, #7daee8, #6493c9);
+  background-image: -o-linear-gradient(top, #7daee8, #6493c9);
+  background-image: -ms-linear-gradient(top, #7daee8, #6493c9);
+  background-image: linear-gradient(top, #7daee8, #6493c9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7daee8, endColorstr=#ff6493c9, GradientType=0);
+  border-color: #5a8ac0;
+  color: #fff;
+}
+.u-btn-1:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6493c9), to(#7daee8));
+  background-image: -webkit-linear-gradient(top, #6493c9, #7daee8);
+  background-image: -moz-linear-gradient(top, #6493c9, #7daee8);
+  background-image: -o-linear-gradient(top, #6493c9, #7daee8);
+  background-image: -ms-linear-gradient(top, #6493c9, #7daee8);
+  background-image: linear-gradient(top, #6493c9, #7daee8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6493c9, endColorstr=#ff7daee8, GradientType=0);
+}
+.u-btn-2 {
+  /* use configuration */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e04e3b), to(#ce3e2b));
+  background-image: -webkit-linear-gradient(top, #e04e3b, #ce3e2b);
+  background-image: -moz-linear-gradient(top, #e04e3b, #ce3e2b);
+  background-image: -o-linear-gradient(top, #e04e3b, #ce3e2b);
+  background-image: -ms-linear-gradient(top, #e04e3b, #ce3e2b);
+  background-image: linear-gradient(top, #e04e3b, #ce3e2b);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffe04e3b, endColorstr=#ffce3e2b, GradientType=0);
+  border-color: #C13523;
+  color: #fff;
+}
+.u-btn-2:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ce3e2b), to(#e04e3b));
+  background-image: -webkit-linear-gradient(top, #ce3e2b, #e04e3b);
+  background-image: -moz-linear-gradient(top, #ce3e2b, #e04e3b);
+  background-image: -o-linear-gradient(top, #ce3e2b, #e04e3b);
+  background-image: -ms-linear-gradient(top, #ce3e2b, #e04e3b);
+  background-image: linear-gradient(top, #ce3e2b, #e04e3b);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffce3e2b, endColorstr=#ffe04e3b, GradientType=0);
+}
+/* ------------------ icon button ------------------ */
+.u-btn-icon {
+  font-size: 0;
+}
+.u-btn-icon i,
+.u-btn-icon span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+.u-btn-icon i {
+  width: 16px;
+  height: 16px;
+  background-color: #f00;
+  background: url(../images/download.png) no-repeat left center;
+}
+.u-btn-icon span {
+  font-size: 12px;
+  padding-left: 5px;
+}
