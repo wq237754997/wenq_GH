@@ -43,25 +43,25 @@
 	/* base configuration */ 
 	.dib();
 	vertical-align: middle;
-	border: 1px solid #ccc;
+	border-width: 1px ;
+	border-style: solid;
 	cursor: pointer;
 	padding: 5px 10px;
 	border-radius: 3px;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 	.usn();
 	*zoom: 1;
-	background-color: #f2f2f2;
 }
 
-a[class="u-btn-base"]{
+a[class*="u-btn-base"]{
 
 	&:hover{
 		text-decoration: none;
 	}
 }
 
-input[type="button"],
-button[class="u-btn-base"]{
+input[type*="button"],
+button[class*="u-btn-base"]{
 	outline: none;
 	margin: 0;
 	padding: 0;
@@ -73,8 +73,7 @@ button[class="u-btn-base"]{
 
 /* ------------------ background[不同颜色按钮] ------------------ */
 // 渐变模式
-
-.u-btn-0{
+.gradient0{
 
 	//* ---------------------------------------- [white -> gray] */
 	.linearGradient(@bgColor-W-G-T,@bgColor-W-G-B);
@@ -86,7 +85,7 @@ button[class="u-btn-base"]{
 	}
 }
 
-.u-btn-1{
+.gradient1{
 	/* use configuration */
 
 	//* ---------------------------------------- [blue] */ 
@@ -100,7 +99,7 @@ button[class="u-btn-base"]{
 	}
 }
 
-.u-btn-2{
+.gradient2{
 	/* use configuration */ 
 
 	//* ---------------------------------------- [red] */ 
@@ -114,7 +113,7 @@ button[class="u-btn-base"]{
 	}
 }
 
-.u-btn-3{
+.gradient3{
 	/* use configuration */ 
 
 	//* ---------------------------------------- [green] */ 
@@ -128,7 +127,7 @@ button[class="u-btn-base"]{
 	}
 }
 
-.u-btn-4{
+.gradient4{
 	/* use configuration */ 
 
 	//* ---------------------------------------- [green] */ 
@@ -149,9 +148,13 @@ button[class="u-btn-base"]{
 .monochrome3,
 .monochrome4{
 	color: #fff;
+
+	&:hover{
+		color: #fff !important;
+	}
 }
 
-// 蓝色
+// 默认色[ 灰白 ]
 .monochrome0{
 	background: #f2f2f2;
 	border-color: #ccc;
@@ -159,7 +162,6 @@ button[class="u-btn-base"]{
 
 	&:hover{
 		background: #dfdfdf;
-		color: #fff !important;
 	}
 }
 
@@ -238,7 +240,7 @@ button[class="u-btn-base"]{
 	}
 }
 
-.u-btn-icon-select{
+.u-btn-type-select{
 	position: relative;
 	padding-right: 20px;	
 
