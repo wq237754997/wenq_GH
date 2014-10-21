@@ -260,22 +260,10 @@ button[class*="u-btn-base"] {
   color: #fff !important;
   cursor: default !important;
   border-color: #a3a3a3 !important;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#cccccc)) !important;
-  background-image: -webkit-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -moz-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -o-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -ms-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: linear-gradient(top, #cccccc, #cccccc) !important;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcccccc, endColorstr=#ffcccccc, GradientType=0) !important;
+  background: #ccc;
 }
 .btn-disable:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#cccccc)) !important;
-  background-image: -webkit-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -moz-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -o-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: -ms-linear-gradient(top, #cccccc, #cccccc) !important;
-  background-image: linear-gradient(top, #cccccc, #cccccc) !important;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcccccc, endColorstr=#ffcccccc, GradientType=0) !important;
+  background: #ccc;
 }
 .u-btn-type-select {
   position: relative;

@@ -212,6 +212,7 @@ button[class*="u-btn-base"]{
 }
 
 /* ------------------ icon button[ 带图标的按钮 ] ------------------ */
+// base
 .u-btn-icon{
 	font-size: 0;
 
@@ -232,7 +233,7 @@ button[class*="u-btn-base"]{
 		padding-left: 5px;
 	}
 }
-
+// icon类型
 .u-btn-icon-downlod{
 
 	i{
@@ -241,17 +242,22 @@ button[class*="u-btn-base"]{
 }
 
 /* ------------------ 类型按钮 ------------------ */
+
+// 禁用按钮
 .btn-disable{
 	color: #fff !important;
 	cursor: default !important;
 	border-color: #a3a3a3 !important;
-	.linearGradient(#ccc,#ccc) !important;
+	//.linearGradient(#ccc,#ccc) !important;
+	background: #ccc;
 	
 	&:hover{
-		.linearGradient(#ccc,#ccc) !important;
+		//.linearGradient(#ccc,#ccc) !important;
+		background: #ccc;
 	}
 }
 
+// 下拉按钮
 .u-btn-type-select{
 	position: relative;
 	padding-right: 20px;	
