@@ -9,6 +9,7 @@
 /* @import less
 ------------------------------------------------------------------------------------------ */
 @import "../_mixin/dib";
+@import "../_mixin/usn";
 @import "../_effect/linearGradient";
 
 /* @u-btn
@@ -25,15 +26,55 @@
 @bgColor-R-T: #e04e3b;
 @bgColor-R-B: #ce3e2b;
 
-/* ------------------ base button ------------------ */
+// green
+@bgColor-G-T: #68c668;
+@bgColor-G-B: #50b150;
+
+// yellow
+@bgColor-Y-T: #fbb149;
+@bgColor-Y-B: #f8960a;
+
+// btn height
+@btnHt: 30px;
+@btnLHt: 20px;
+
+/* ------------------ base button[默认按钮样式] ------------------ */
 .u-btn-base{
 	/* base configuration */ 
 	.dib();
-	border-width: 1px ;
-	border-style: solid;
+	vertical-align: middle;
+	border: 1px solid #ccc;
 	cursor: pointer;
 	padding: 5px 10px;
 	border-radius: 3px;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	.usn();
+	*zoom: 1;
+	background-color: #f2f2f2;
+}
+
+a[class="u-btn-base"]{
+
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+input[type="button"],
+button[class="u-btn-base"]{
+	outline: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: @btnHt;
+	line-height: @btnLHt;
+}
+
+/* ------------------ background[不同颜色按钮] ------------------ */
+// 渐变模式
+
+.u-btn-0{
 
 	//* ---------------------------------------- [white -> gray] */
 	.linearGradient(@bgColor-W-G-T,@bgColor-W-G-B);
@@ -62,7 +103,7 @@
 .u-btn-2{
 	/* use configuration */ 
 
-	//* ---------------------------------------- [blue] */ 
+	//* ---------------------------------------- [red] */ 
 	.linearGradient(@bgColor-R-T,@bgColor-R-B);
 	border-color: #C13523;
 	color: #fff;
@@ -73,7 +114,96 @@
 	}
 }
 
-/* ------------------ icon button ------------------ */
+.u-btn-3{
+	/* use configuration */ 
+
+	//* ---------------------------------------- [green] */ 
+	.linearGradient(@bgColor-G-T,@bgColor-G-B);
+	border-color: #52a552;
+	color: #fff;
+
+	&:hover{
+		//* ---------------------------------------- [green] */
+		.linearGradient(@bgColor-G-B,@bgColor-G-T);
+	}
+}
+
+.u-btn-4{
+	/* use configuration */ 
+
+	//* ---------------------------------------- [green] */ 
+	.linearGradient(@bgColor-Y-T,@bgColor-Y-B);
+	border-color: #e1962d;
+	color: #fff;
+
+	&:hover{
+		//* ---------------------------------------- [green] */
+		.linearGradient(@bgColor-Y-B,@bgColor-Y-T);
+	}
+}
+
+// 单色模式
+.monochrome0,
+.monochrome1,
+.monochrome2,
+.monochrome3,
+.monochrome4{
+	color: #fff;
+}
+
+// 蓝色
+.monochrome0{
+	background: #f2f2f2;
+	border-color: #ccc;
+	color: #333;
+
+	&:hover{
+		background: #dfdfdf;
+		color: #fff !important;
+	}
+}
+
+// 蓝色
+.monochrome1{
+	background: #7daee8;
+	border-color: #5a8ac0;
+
+	&:hover{
+		background: #6493c9;
+	}
+}
+
+// 红色
+.monochrome2{
+	background: #e04e3b;
+	border-color: #c13523;
+
+	&:hover{
+		background: #ce3e2b;
+	}
+}
+
+// 绿色
+.monochrome3{
+	background: #68c668;
+	border-color: #52a552;
+
+	&:hover{
+		background: #50b150;
+	}
+}
+
+// 黄色
+.monochrome4{
+	background: #fbb149;
+	border-color: #e1962d;
+
+	&:hover{
+		background: #f8960a;
+	}
+}
+
+/* ------------------ icon button[ 带图标的按钮 ] ------------------ */
 .u-btn-icon{
 	font-size: 0;
 
@@ -93,5 +223,33 @@
 	span{
 		font-size: 12px;
 		padding-left: 5px;
+	}
+}
+
+/* ------------------ 类型按钮 ------------------ */
+.btn-disable{
+	color: #fff !important;
+	cursor: default !important;
+	border-color: #a3a3a3 !important;
+	.linearGradient(#ccc,#ccc) !important;
+	
+	&:hover{
+		.linearGradient(#ccc,#ccc) !important;
+	}
+}
+
+.u-btn-icon-select{
+	position: relative;
+	padding-right: 20px;	
+
+	i{
+		width: 0;
+		height: 0px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #a3a3a3 transparent transparent transparent;
+		position: absolute;
+		right: 5px;
+		top: 12px;
 	}
 }

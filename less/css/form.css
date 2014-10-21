@@ -205,7 +205,7 @@ form {
   width: 55px;
   text-align: right;
   float: left;
-  line-height: 20px;
+  line-height: 25px;
 }
 .label-inline {
   display: inline-block;
@@ -213,8 +213,8 @@ form {
   *zoom: 1;
   width: 55px;
   text-align: right;
-  height: 20px;
-  line-height: 20px;
+  height: 25px;
+  line-height: 25px;
   background-color: #f00;
 }
 .label-field-rc {
@@ -238,8 +238,8 @@ form {
 /* ------ u-input[元件：文本框] ------ */
 .u-input {
   width: 150px;
-  height: 10px;
-  line-height: 10px;
+  height: 15px;
+  line-height: 15px;
   padding: 4px;
   border: 1px solid #ccc;
   outline: none;
@@ -249,34 +249,35 @@ form {
   -o-transition: box-shadow 0.3s linear;
   transition: box-shadow 0.3s linear;
   /*按需添加*/
-  /*
-	&:hover,
-	&:focus{
-		.transition(all,0.5s,linear);
-		border-color: rgba(82, 168, 236, 0.8);
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
-	}
-	*/
+  /**/
+}
+.u-input:hover,
+.u-input:focus {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 /* ------ u-f-btn[元件：按钮] ------ */
 .u-f-btn {
-  height: 20px;
-  line-height: 20px;
+  height: 25px;
+  line-height: 25px;
   border: 0;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #8acb49;
+  background-color: #0078e7;
   color: #fff;
   cursor: pointer;
   -webkit-transition: background-color 0.5s linear;
   -moz-transition: background-color 0.5s linear;
   -o-transition: background-color 0.5s linear;
   transition: background-color 0.5s linear;
-  /*
-	&:hover{
-		background-color: @color2;
-	}
-	*/
+  /**/
+}
+.u-f-btn:hover {
+  background-color: #006bce;
 }
 /* ------ u-checkbox[元件：复选框] ------ */
 .u-checkbox {
@@ -293,14 +294,14 @@ form {
   *zoom: 1;
   padding: 0px;
   width: 70px;
-  height: 20px;
-  background-color: #8acb49;
+  height: 25px;
+  background-color: #0078e7;
   position: relative;
   overflow: hidden;
 }
 .m-file .file-text {
   display: block;
-  line-height: 20px;
+  line-height: 25px;
   cursor: pointer;
   color: #fff;
   text-align: center;
@@ -309,7 +310,7 @@ form {
   opacity: 0;
   filter: alpha(opacity=0);
   width: 70px;
-  height: 20px;
+  height: 25px;
   left: 0;
   top: 0;
   display: block;
