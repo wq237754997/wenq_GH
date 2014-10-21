@@ -247,11 +247,13 @@ button[class*="u-btn-base"] {
   width: 16px;
   height: 16px;
   background-color: #f00;
-  background: url(../images/download.png) no-repeat left center;
 }
 .u-btn-icon span {
   font-size: 12px;
   padding-left: 5px;
+}
+.u-btn-icon-downlod i {
+  background: url(../images/download.png) no-repeat left center;
 }
 /* ------------------ 类型按钮 ------------------ */
 .btn-disable {
