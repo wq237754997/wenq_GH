@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="icon" type="logo.jpg" href="logo.jpg">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 12px;
+        margin: 20px;
+    }
+    .box {
+        width: 500px;
+        border: 2px solid #333;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .box1 {
+        height: 25px;
+        line-height: 25px;
+    }
+    
+    .box2 {
+        display: table-cell;
+        height: 200px;
+        vertical-align: middle;
+    }
+    .box2 span {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: middle;
+    }
+    </style>
+    <!--[if lt IE 8]>
+    <style>
+	.box2 i{
+    	display: inline;
+    	zoom: 1;
+    	vertical-align: middle;
+    	height: 100%;
+    }
+    </style>
+    <![endif]-->
+</head>
+
+<body>
+    <h1>单行文本垂直居中对齐</h1>
+    <div class="box box1">单行文本垂直居中对齐</div>
+    <br>
+    <h1>多行文本垂直居中对齐</h1>
+    <div class="box box2">
+    	<i></i>
+        <span>
+            多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐.
+            <br>多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐,多行文本垂直居中对齐.
+        </span>
+    </div>
+</body>
+
+</html>
