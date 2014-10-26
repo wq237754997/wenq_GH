@@ -6,12 +6,14 @@
 	<style>
 	*{ margin: 0; padding: 0;}
 	.box{
-		border: 1px solid #333;
+		background-color: #00f;
 	}
 	.a,
 	.b{
 		width: 50px;
 		height: 50px;
+		line-height: 50px;
+		text-align: center;
 	}
 	.a{
 		background-color: #f00;
@@ -30,7 +32,7 @@
 		_zoom: 1;
 	}
 
-	/* ------ 2 .简介版：清楚浮动产生的影响[倾向使用]  ------*/
+	/* ------ 2 .简洁版：清楚浮动产生的影响[倾向使用]  ------*/
 	.clearfix2:after{
 		content: "";
 		disaply: table;
@@ -74,6 +76,12 @@
 		*zoom: 1;
 	}
 	/* --- /清除浮动产生的影响 --- */
+
+	/* ------ 5 .使用浮动; 清楚浮动产生的影响 ------ */
+	.clearfix4{
+		float: left;
+		width: 100%;
+	}
 	</style>
 </head>
 <body>
