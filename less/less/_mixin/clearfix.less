@@ -9,10 +9,9 @@
 /* @clearfix
  ------------------------------------------------------------------------------------------------ */
 .clearfix{
-	*zoom: 1;
+	zoom: 1;
 
-	&::before,
-	&::after{
+	&:after{
 		content: '';
 		display: table;
 		clear: both;

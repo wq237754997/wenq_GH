@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	body{
+		font-family: "微软雅黑";
+		margin: 20px;
+		font-size: 12px;
+	}
+	table{
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	.m-table{
+		width: 392px;
+		margin-bottom: 10px;
+		background-color: #fff;
+	}
+
+	.m-table th,
+	.m-table td{
+		border: 1px solid #ccc;
+	}
+	
+	/* 表头 */
+	.m-table thead th{
+		padding: 12px 5px;
+		border-color: #027dac;
+		background: #00abed;
+		color: #fff;
+	}
+	/* 全局 td */
+	.m-table td{
+		padding: 8px 5px;
+	}
+	
+	.m-table .thead,
+	.m-table .tbody table{
+		width: 100%;
+	}
+
+	.m-table .tbody{
+		height: 197px;
+		overflow: auto;
+	}
+	
+	/* 边框重置 */
+	.m-table-scroll{
+		border: 1px solid #027dac;
+	}
+
+	.m-table-scroll .first th,
+	.m-table-scroll .first td{
+		border-top: 0;
+	}
+
+	.m-table-scroll .last td{
+		border-bottom: 0;
+	}
+
+	.m-table-scroll .br-l{
+		border-left: 0;
+	}
+	
+	.m-table-scroll .br-r{
+		border-right: 0;
+	}
+	</style>
+</head>
+<body>
+	<h1>基础表格</h1>
+	<table class="m-table">
+		<thead>
+			<tr>
+				<th>上报地点</th>
+				<th>上报时间</th>
+				<th>作业量</th>
+				<th>作业效果</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>杭州</td>
+				<td>20141028</td>
+				<td>5</td>
+				<td>优</td>
+			</tr>
+			<tr>
+				<td>杭州</td>
+				<td>20141028</td>
+				<td>5</td>
+				<td>优</td>
+			</tr>
+			<tr>
+				<td>杭州</td>
+				<td>20141028</td>
+				<td>5</td>
+				<td>优</td>
+			</tr>
+			<tr>
+				<td>杭州</td>
+				<td>20141028</td>
+				<td>5</td>
+				<td>优</td>
+			</tr>
+			<tr>
+				<td>杭州</td>
+				<td>20141028</td>
+				<td>5</td>
+				<td>优</td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<h1>表头固定 表体滚动条</h1>
+	<div class="m-table m-table-scroll">
+		<table class="thead">
+			<colgroup>
+				<col style="width: 80px;" />
+				<col style="width: 120px;" />
+				<col style="width: 50px;" />
+				<col />
+			</colgroup>
+			<thead>
+				<tr class="first">
+					<th class="br-l">上报地点</th>
+					<th>上报时间</th>
+					<th>作业量</th>
+					<th class="br-r">作业效果</th>
+				</tr>
+			</thead>
+		</table>
+		<div class="tbody">
+			<table>
+				<colgroup>
+					<col style="width: 80px;" />
+					<col style="width: 120px;" />
+					<col style="width: 50px;" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr class="first">
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr>
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+					<tr class="last">
+						<td class="br-l">杭州</td>
+						<td>20141028</td>
+						<td>5</td>
+						<td class="br-r">优</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
