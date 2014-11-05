@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 12px;
+        margin: 20px;
+    }
+    img{ border: 0;}
+    .usn{
+    	-webkit-user-select: none;
+    	-moz-user-select: none;
+    	-ms-user-select: none;
+    	-o-user-select: none;
+    	user-select: none;
+    }
+    /* 选项卡样式 -- 基础 */
+    .tab-uns .tab-un {
+        /*display: none;*/
+    }
+    .tab-btns {
+        cursor: pointer;
+    }
+    .tab-btns .btn.z-on {
+        background-color: #ff8e00 !important;
+    }
+    /* ------------------------------------------------------------------------ */
+    /* 轮播图 -- [基础选项卡扩展] */
+    .m-banner {
+        width: 280px;
+        height: 180px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.10);
+        padding: 5px;
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+    }
+    .m-banner .tab-btns {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 3;
+    }
+    .m-banner .tab-btns .btn {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background-color: #999;
+        color: #fff;
+
+        -webkit-transition: all 1s ease;
+    }
+    .m-banner .tab-un {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 1;
+        width: 280px;
+        height: 180px;
+    }
+    .m-banner .tab-un a {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        width: 280px;
+        height: 180px;
+    }
+    .m-banner .tab-un img {
+    	display: inline-block;
+    	width: 100px;
+    	height: 100px;
+
+        transform: scaleX(1.3) scaleY(1.3);
+
+        -webkit-transition: all 5s ease;
+        -moz-transition: all 5s ease;
+        -ms-transition: all 5s ease;
+        -o-transition: all 5s ease;
+        transition: all 5s ease;
+    }
+    .m-banner .tab-un.hover{
+    	z-index: 2;
+    }
+    .m-banner .tab-un.hover img {
+		transform: scaleX(1) scaleY(1);
+    }
+    .m-banner .tab-uns {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 切换按钮 */
+    .m-banner .btns .prev-btn,
+    .m-banner .btns .next-btn{
+    	display: block;
+    	width: 20px;
+    	height: 20px;
+    	line-height: 20px;
+    	text-align: center;
+    	border-radius: 50%;
+    	font-family: "\5B8B\4F53";
+    	font-style: normal;
+    	background-color: #f2f2f2;
+    	color: #fff;
+    	position: absolute;
+    	top: 50%;
+    	z-index: 3;
+    	margin-top: -10px;
+    	cursor: pointer;
+		
+    	-webkit-transition: all 0.3s ease-out;
+    	-moz-transition: all 0.3s ease-out;
+    	-ms-transition: all 0.3s ease-out;
+    	-o-transition: all 0.3s ease-out;
+    	transition: all 0.3s ease-out;
+    }
+
+    .m-banner .btns .prev-btn{
+    	left: -20px;
+    }
+    .m-banner .btns .next-btn{
+    	right: -20px;
+    }
+    .m-banner:hover .prev-btn{
+    	left: 10px;
+    }
+    .m-banner:hover .next-btn{
+    	right: 10px;
+    }
+    .m-banner:hover .prev-btn,
+    .m-banner:hover .next-btn{
+    	background-color: #333;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 选项卡 -->
+    <div class="tab m-banner j-tab-auto usn">
+    	<!-- 选项按钮 -->
+        <div class="tab-btns">
+            <span class="btn">1</span>
+            <span class="btn">2</span>
+            <span class="btn">3</span>
+        </div>
+        <!-- 选项主体 -->
+        <div class="tab-uns">
+        	<div class="tab-un" style="background-color: #f26951;">
+        		<a href="#">
+        			<img src="1.png" alt="" />
+        		</a>
+        	</div>
+        	<div class="tab-un" style="background-color: #71c960;">
+        		<a href="#">
+        			<img src="2.png" alt="" />
+        		</a>
+        	</div>
+        	<div class="tab-un" style="background-color: #6ebfee;">
+        		<a href="#">
+        			<img src="3.png" alt="" />
+        		</a>
+        	</div>
+        </div>
+        
+        <!-- 选项主体 -->
+        <!--
+        <div class="tab-uns">
+        	<div class="tab-un" style="display: block;">
+        		<a href="#">
+        			1
+        		</a>
+        	</div>
+        	<div class="tab-un">
+        		<a href="#">
+        			2
+        		</a>
+        	</div>
+        	<div class="tab-un">
+        		<a href="#">
+        			3
+        		</a>
+        	</div>
+        </div>
+        -->
+        <!-- 上一张 下一张 -->
+        <div class="btns">
+            <i class="prev-btn">&lt;</i>
+            <i class="next-btn">&gt;</i>
+        </div>
+    </div>
+
+    <script src="../jquery.js"></script>
+    <script src="j-tab.js"></script>
+    <script>
+    // 初始化
+    $(function() {
+        // 调用[用户配置]
+        $(".tab").tab({
+            //event : "click"
+        });
+    });
+    </script>
+</body>
+
+</html>
