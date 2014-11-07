@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>两列-左侧固定宽度 右侧自适应布局</title>
+    <style>
+    /* 宋体: \5B8B\4F53; 微软雅黑: ;*/
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 12px;
+        font-family: "\5FAE\8F6F\96C5\9ED1";
+        margin: 5px;
+        min-width: 960px;
+    }
+    .clearfix {
+        zoom: 1;
+    }
+    .clearfix:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+    .line {
+        margin: 5px 0;
+    }
+    /*  */
+    
+    .g-wrap {
+        border: 1px solid #000;
+    }
+    /*  */
+    
+    .g-main {
+        float: left;
+        width: 100%;
+        background-color: #4eb3b9;
+        margin-right: -200px;
+    }
+    .g-sidebar {
+        float: right;
+        width: 200px;
+        background-color: #ff0097;
+    }
+    .main-inner {
+        margin-right: 200px;
+    }
+    .sidebar-inner,
+    .main-inner {
+        padding: 5px;
+    }
+    /*  */
+    
+    .g-main-1 {
+        float: left;
+        width: 100%;
+        background-color: #4eb3b9;
+    }
+    .g-sidebar-1 {
+        position: relative;
+        float: right;
+        width: 200px;
+        background-color: #ff0097;
+        margin-left: -200px;
+    }
+    .main-inner-1,
+    .sidebar-inner-1 {
+        padding: 5px;
+    }
+    .main-inner-1 {
+        margin-right: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 1 -->
+    <div class="g-wrap clearfix">
+        <div class="g-main">
+            <div class="main-inner">
+                <p style="height: 100px; overflow: auto;">
+                    左侧自适应[主体]
+                </p>
+            </div>
+        </div>
+        <div class="g-sidebar">
+            <div class="sidebar-inner">
+                <p style="height: 100px; overflow: auto;">
+                    右侧定宽[侧边栏]
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="line"></div>
+    <!-- 2 -->
+    <div class="g-wrap clearfix">
+        <div class="g-main-1">
+            <div class="main-inner-1">
+                <p style="height: 100px; overflow: auto;">
+                    左侧自适应[主体]
+                </p>
+            </div>
+        </div>
+        <div class="g-sidebar-1">
+            <div class="sidebar-inner-1">
+                <p style="height: 100px; overflow: auto;">
+                    右侧定宽[侧边栏]
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

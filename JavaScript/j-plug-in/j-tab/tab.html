@@ -66,11 +66,17 @@
     }
     .m-banner .tab-un {
         position: absolute;
-        top: 5px;
-        left: 5px;
+        /*top: 5px;*/
+        /*left: 5px;*/
+        /*top: -100%;*/
+        left: -100%;
         z-index: 1;
         width: 280px;
         height: 180px;
+        opacity: 0;
+        
+        -webkit-transition: 0.8s ease-out;
+        -webkit-transition-property: opacity, left, top;
     }
     .m-banner .tab-un a {
         display: table-cell;
@@ -81,6 +87,8 @@
     }
     .m-banner .tab-un img {
     	display: inline-block;
+        *display: inline;
+        *zoom: 1;
     	width: 100px;
     	height: 100px;
 
@@ -93,8 +101,17 @@
         transition: all 5s ease;
     }
     .m-banner .tab-un.hover{
-    	z-index: 2;
+        left: 5px;
+        /*top: 5px;*/
+        z-index: 2;
+        opacity: 1;
     }
+    .m-banner .tab-un.hover ~ .tab-un{
+        left: 100%;
+        /*top: 100%;*/
+    }
+    
+    /* 背景放大缩小 */
     .m-banner .tab-un.hover img {
 		transform: scaleX(1) scaleY(1);
     }
@@ -159,7 +176,7 @@
         </div>
         <!-- 选项主体 -->
         <div class="tab-uns">
-        	<div class="tab-un" style="background-color: #f26951;">
+        	<div class="tab-un hover" style="background-color: #f26951;">
         		<a href="#">
         			<img src="1.png" alt="" />
         		</a>
@@ -208,8 +225,9 @@
     <script>
     // 初始化
     $(function() {
-        // 调用[用户配置]
+        // 调用
         $(".tab").tab({
+            // 用户配置参数
             //event : "click"
         });
     });

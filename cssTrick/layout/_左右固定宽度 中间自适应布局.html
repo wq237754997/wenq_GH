@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列-左侧固定宽度 右侧自适应布局</title>
+	<style>
+	/* 宋体: \5B8B\4F53; 微软雅黑: ;*/
+	*{ margin: 0; padding: 0;}
+	body{ font-size: 12px; font-family: "\5FAE\8F6F\96C5\9ED1"; margin: 5px;}
+
+	.clearfix{ zoom: 1;}
+
+	.clearfix:after{
+		display: table;
+		clear: both;
+		content: "";
+	}
+	.line{
+		margin: 5px 0;
+	}
+	/*  */
+	.g-wrap{
+		border: 1px solid #000;
+	}
+	.g-sidebar1,
+	.g-sidebar2{
+		width: 190px;
+		height: 90px;
+		padding: 5px;
+	}
+	.g-sidebar1{
+		float: left;
+		background-color: #e51400;
+		position: relative;
+	}
+	.g-sidebar2{
+		float: right;
+		background-color: #4eb3b9;
+		margin-left: -200px;
+	}
+	.g-main{
+		float: left;
+		width: 100%;
+		background-color: #ff0097;
+		margin-left: -200px;
+		padding: 5px 0;
+	}
+	.main-inner{
+		height: 90px;
+		overflow: auto;
+		margin-left: 210px;
+		margin-right: 210px;
+	}
+	</style>
+</head>
+<body>
+	<!--  -->
+	<div class="g-wrap clearfix">
+		<div class="g-sidebar1">左侧定宽</div>
+
+		<div class="g-main">
+			<div class="main-inner">中间自适应</div>
+		</div>
+
+		<div class="g-sidebar2">左侧定宽</div>
+	</div>
+</body>
+</html>

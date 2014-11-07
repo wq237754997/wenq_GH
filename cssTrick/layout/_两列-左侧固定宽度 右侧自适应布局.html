@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列-左侧固定宽度 右侧自适应布局</title>
+	<style>
+	/* 宋体: \5B8B\4F53; 微软雅黑: ;*/
+	*{ margin: 0; padding: 0;}
+	body{ font-size: 12px; font-family: "\5FAE\8F6F\96C5\9ED1"; margin: 5px; min-width: 960px;}
+
+	.clearfix{ zoom: 1;}
+
+	.clearfix:after{
+		display: table;
+		clear: both;
+		content: "";
+	}
+	.line{
+		margin: 5px 0;
+	}
+	/*  */
+	.g-wrap{
+		border: 1px solid #000;
+	}
+
+	.g-sidebar{
+		width: 190px;
+		height: 90px;
+		float: left;
+		margin-right: -200px;
+		background-color: #4eb3b9;
+		position: relative;
+		padding: 5px;
+	}
+	.g-main{
+		height: 100px;
+		float: right;
+		width: 100%;
+		background-color: #ff0097;
+	}
+	.g-main-inner{
+		margin-left: 200px;
+		padding: 5px;
+	}
+
+	/*  */
+	.g-sidebar-1{
+		width: 190px;
+		height: 90px;
+		float: left;
+		background-color: #4eb3b9;
+		padding: 5px;
+	}
+	.g-main-1{
+		margin-left: 200px;
+		height: 90px;
+		background-color: #ff0097;
+		padding: 5px;
+	}
+	</style>
+</head>
+<body>
+	<!--  -->
+	<div class="g-wrap clearfix">
+		<div class="g-sidebar">左侧定宽</div>
+		<div class="g-main">
+			<div class="g-main-inner">右侧自适应</div>
+		</div>
+	</div>
+	<!--  -->
+	<div class="line"></div>
+	<!--  -->
+	<div class="g-wrap">
+		<div class="g-sidebar-1">左侧定宽</div>
+		<div class="g-main-1">
+			右侧自适应
+		</div>
+	</div>
+</body>
+</html>
