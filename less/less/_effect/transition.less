@@ -3,13 +3,14 @@
  * 
  * @Author: wenq
  *
- * @Explain: 交互效果样式
+ * @Explain: 过渡效果封装
  */
 
 /* ------ 过渡属性封装 ------ */
 .transition(@property,@duration,@timing){
 	-webkit-transition: @property @duration @timing;
 	-moz-transition: @property @duration @timing;
+	-ms-transition: @property @duration @timing;
 	-o-transition: @property @duration @timing;
 	transition: @property @duration @timing;
 }
