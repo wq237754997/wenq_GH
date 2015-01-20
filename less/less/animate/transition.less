@@ -3,10 +3,11 @@
  * 
  * @Author: wenq
  *
- * @Explain: 过渡效果封装
+ * @Explain: 过渡效果
  */
 
-/* ------ 过渡属性封装 ------ */
+/* --- @transition
+ ------------------------------------------------------------------------------ */
 .transition(@property,@duration,@timing){
 	-webkit-transition: @property @duration @timing;
 	-moz-transition: @property @duration @timing;
@@ -14,4 +15,3 @@
 	-o-transition: @property @duration @timing;
 	transition: @property @duration @timing;
 }
-/* ------ /过渡属性封装 ------ */
