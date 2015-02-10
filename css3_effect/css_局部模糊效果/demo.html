@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 20px;
+        font-family: "\5FAE\8F6F\96C5\9ED1";
+    }
+    .box {
+        position: relative;
+        width: 192px;
+        height: 168px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .box img {
+        -webkit-transition: all .25s;
+        -ms-transition: all .25s;
+        transition: all .25s;
+    }
+    .cover {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+    .cover .blur {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*filter: url(blur-5px.svg#blur);*/
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        filter: blur(5px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
+    }
+    .cover .text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 0 10px;
+        color: #fff;
+    }
+    .box:hover .layer,
+    .box:hover .blur {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        zoom: 1.05;
+    }
+    :root .box:hover .layer,
+    :root .box:hover .blur {
+        zoom: 1;
+    }
+    .hidden {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- IE10+ blur -->
+    <svg class="hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <filter id="blur">
+                <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+            </filter>
+        </defs>
+    </svg>
+    <!-- /IE10+ blur -->
+
+    <div class="box">
+        <img src="images/demo.jpg" alt="" class="layer" />
+        <div class="cover">
+            <img src="images/demo.jpg" alt="" class="blur" />
+            <span class="text">宠物~</span>
+        </div>
+    </div>
+    
+    <!-- js -->
+    <script>
+    //IE10+ blur            
+    if (typeof document.msHidden != "undefined") {
+        [].slice.call(document.querySelectorAll(".cover img")).forEach(function(img) {
+            img.classList.add("hidden");
+
+            var myImage = new Image(),
+                src = img.src;
+            img.insertAdjacentHTML("afterend", '<svg class="blur" width="160" height="140">\
+            <image xlink:href="' + src + '" src="' + src + '" width="160" height="140" y="0" x="0" filter="url(#blur)" />\
+        </svg>');
+        });
+    }
+    </script>
+</body>
+
+</html>
