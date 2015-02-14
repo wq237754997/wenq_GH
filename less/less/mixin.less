@@ -1,0 +1,88 @@
+/**
+ * FileName: mixin
+ * @Author: wenq
+ * @Explain: 混合使用
+ */
+
+//线性渐变，只支持水平和垂直方向。滤镜在IE6、IE7中须配合width或者height属性方可生效
+.linearGradient(@startColor,@endColor,@layout:horizontal){
+	background-color:@endColor;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background-image:-webkit-linear-gradient(top,@startColor,@endColor);
+	background-image:-moz-linear-gradient(top,@startColor,@endColor);
+	background-image:-o-linear-gradient(top,@startColor,@endColor);
+	background-image:-ms-linear-gradient(top,@startColor,@endColor);
+	background-image:linear-gradient(top,@startColor,@endColor);
+}
+.linearGradient(@startColor,@endColor,@layout:horizontal)when(@layout=horizontal){
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@startColor), endColorstr=argb(@endColor), GradientType=0);
+}
+.linearGradient(@startColor,@endColor,@layout:horizontal)when(@layout=vertical){
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@startColor), endColorstr=argb(@endColor), GradientType=1);
+}
+
+// 占位符 颜色设置
+.placeholder(@font_family,@color_val){
+	&::-webkit-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-moz-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-o-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+	
+	&:-ms-input-placeholder{
+		color:@color_val;
+	}
+
+	&::input-placeholder{
+		color:@color_val;
+	}
+}
+
+//清楚浮动产生的影响样式
+.clearfix(){
+    zoom: 1;
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+//行内块化元素
+.inline-block(){
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+//文本超出省略符号显示
+.toe(){
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 禁止用户选择文本
+.usn(){
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-m-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// 解决IE6下png24半透明 图片地址需要绝对路径
+.png24(@url){
+	_background-image:none;
+	_filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='scale')";
+}

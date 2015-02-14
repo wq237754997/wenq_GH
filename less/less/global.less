@@ -1,0 +1,22 @@
+@import "variable";
+@import "reset/reset";
+@import "helper";
+@import "components/icon";
+@import "components/button";
+
+/* -----------------------通用，根据实际情况修改 */
+body{
+	font:12px/1.5 tahoma,helvetica,arial,@fontSt;
+	color: #333;
+	background-color: #fff;
+}
+
+a{
+	color: blue;
+	text-decoration:none;
+
+	&:hover{
+		color:red;
+		text-decoration:underline;
+	}
+}

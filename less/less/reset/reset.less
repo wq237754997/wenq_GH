@@ -1,17 +1,41 @@
 /**
  * @FileName: reset
- * 
  * @Author: wenq
- *
- * @Explain: 重置文件[不包括HTML5元素重置]
+ * @Explain: 重置文件
  */
+@import "../variable";
 
-/* --- @less文件导入
- ------------------------------------------------------------------------------ */
-@import "variable";
+/* -----------------------基础重置 */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,nav,section,summary {
+	display: block;
+}
 
-/* --- @reset
- ------------------------------------------------------------------------------ */
+audio,canvas,video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+	width: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+mark {
+	background: #ff0;
+	color: #333333;
+}
+
+figure {
+	margin: 1em 40px 1em 40px;
+}
+
 body,
 dl,dt,dd,
 ul,ol,li,
@@ -23,13 +47,6 @@ p,blockquote{
 	padding:0;
 }
 
-body{
-	font:12px/1.5 @fontSt,Tahoma,Helvetica,Arial;
-	color: #333;
-	background-color: #fff;
-}
-
-/* ------ 表单元素重置 ------ */
 button,
 input,
 select,
@@ -37,12 +54,14 @@ textarea{
 	font-size:100%;
 }
 
+// 去除低版本ie下input,button的额外宽度
 input,
 button{
-	overflow: visible; // 去除低版本ie下input,button的额外宽度
+	overflow: visible; 
 }
 
-textarea{ // 修改ie浏览器下textarea的默认overflow：scroll值,并使其继承父级字体和颜色
+// 修改ie浏览器下textarea的默认overflow：scroll值,并使其继承父级字体和颜色
+textarea{ 
 	overflow: auto;
 	color: inherit;
 	font: inherit;
@@ -52,9 +71,7 @@ textarea{ // 修改ie浏览器下textarea的默认overflow：scroll值,并使其
 input::-ms-clear {
 	display: none;
 }
-/* ------ /表单元素重置 ------ */
 
-/* ------ 表格重置 ------ */
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -64,7 +81,6 @@ table {
 		padding: 0;
 	}
 }
-/* ------ /表格重置 ------ */
 
 li{
 	list-style:none;
@@ -78,17 +94,4 @@ iframe{
 img{
 	border:0;
 	vertical-align:middle;
-}
-
-a,
-a:hover{
-	color: #333;
-}
-
-a{
-	text-decoration:none;
-
-	&:hover{
-		text-decoration:underline;
-	}
 }

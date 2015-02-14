@@ -1,275 +1,52 @@
 /**
- * @FileName: button[按钮]
- * 
+ * @FileName: button
  * @Author: wenq
- *
  * @Explain: 按钮样式
  */
+@import "../mixin";
 
-/* --- @less文件导入
- ------------------------------------------------------------------------------ */
-@import "../_mixin/dib";
-@import "../_mixin/usn";
-@import "../_effect/linearGradient";
-
-/* --- @u-btn
- ------------------------------------------------------------------------------ */
-// white -> gray
-@bgColor-W-G-T: #fefefe;
-@bgColor-W-G-B: #e3e3e3;
-
-// blue
-@bgColor-B-T: #7daee8;
-@bgColor-B-B: #6493c9;
-
-// red
-@bgColor-R-T: #e04e3b;
-@bgColor-R-B: #ce3e2b;
-
-// green
-@bgColor-G-T: #68c668;
-@bgColor-G-B: #50b150;
-
-// yellow
-@bgColor-Y-T: #fbb149;
-@bgColor-Y-B: #f8960a;
-
-// btn height
-@btnHt: 30px;
-@btnLHt: 20px;
-
-/* ------------------ base button[默认按钮样式] ------------------ */
-.u-btn-base{
-	/* base configuration */ 
-	.dib();
-	vertical-align: middle;
-	border-width: 1px ;
-	border-style: solid;
+.btn{
+	padding:14px 10px;
+	font:16px/16px "微软雅黑";
+	border:1px solid #ccc;
+	text-align: center;
+	border-radius:2px;
 	cursor: pointer;
-	padding: 5px 10px;
-	border-radius: 3px;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-	.usn();
-	*zoom: 1;
-}
-
-a[class*="u-btn-base"]{
+	vertical-align: middle;
+	.inline-block();
 
 	&:hover{
 		text-decoration: none;
 	}
 }
 
-input[type*="button"],
-button[class*="u-btn-base"]{
-	outline: none;
-	margin: 0;
-	padding: 0;
-	padding-left: 10px;
-	padding-right: 10px;
-	height: @btnHt;
-	line-height: @btnLHt;
+/* 大小 */
+.btn-big{
+	padding:15px;
+	font:22px/24px "微软雅黑";
 }
-
-/* ------------------ background[不同颜色按钮] ------------------ */
-// 渐变模式
-
-// 灰白
-.gradient0{
-
-	//* ---------------------------------------- [white -> gray] */
-	.linearGradient(@bgColor-W-G-T,@bgColor-W-G-B);
-	border-color: #ccc;
-	
-	&:hover{
-		//* ---------------------------------------- [white -> gray] */
-		.linearGradient(@bgColor-W-G-B,@bgColor-W-G-T);
-	}
+.btn-small{
+	padding:9px 5px;
+	font:12px/16px "微软雅黑";
 }
-
-// 蓝色
-.gradient1{
-	/* use configuration */
-
-	//* ---------------------------------------- [blue] */ 
-	.linearGradient(@bgColor-B-T,@bgColor-B-B);
-	border-color: #5a8ac0;
-	color: #fff;
+/* 色调及状态 */
+.btn-blue{
+	background:#36597f;
+	border-color:#36597f;
+	color:white;
 
 	&:hover{
-		//* ---------------------------------------- [blue] */
-		.linearGradient(@bgColor-B-B,@bgColor-B-T);
+		background:#567aa1;
 	}
 }
+.btn-green{
+	background:white;
+	border-color:#75983e;
+	color:#75983e;
 
-// 红色
-.gradient2{
-	/* use configuration */ 
-
-	//* ---------------------------------------- [red] */ 
-	.linearGradient(@bgColor-R-T,@bgColor-R-B);
-	border-color: #C13523;
-	color: #fff;
-
-	&:hover{
-		//* ---------------------------------------- [red] */
-		.linearGradient(@bgColor-R-B,@bgColor-R-T);
-	}
-}
-
-// 绿色
-.gradient3{
-	/* use configuration */ 
-
-	//* ---------------------------------------- [green] */ 
-	.linearGradient(@bgColor-G-T,@bgColor-G-B);
-	border-color: #52a552;
-	color: #fff;
-
-	&:hover{
-		//* ---------------------------------------- [green] */
-		.linearGradient(@bgColor-G-B,@bgColor-G-T);
-	}
-}
-
-// 黄色
-.gradient4{
-	/* use configuration */ 
-
-	//* ---------------------------------------- [green] */ 
-	.linearGradient(@bgColor-Y-T,@bgColor-Y-B);
-	border-color: #e1962d;
-	color: #fff;
-
-	&:hover{
-		//* ---------------------------------------- [green] */
-		.linearGradient(@bgColor-Y-B,@bgColor-Y-T);
-	}
-}
-
-// 单色模式
-.monochrome0,
-.monochrome1,
-.monochrome2,
-.monochrome3,
-.monochrome4{
-	color: #fff;
-
-	&:hover{
-		color: #fff !important;
-	}
-}
-
-// 默认色[ 灰白 ]
-.monochrome0{
-	background: #f2f2f2;
-	border-color: #ccc;
-	color: #333;
-
-	&:hover{
-		background: #dfdfdf;
-	}
-}
-
-// 蓝色
-.monochrome1{
-	background: #7daee8;
-	border-color: #5a8ac0;
-
-	&:hover{
-		background: #6493c9;
-	}
-}
-
-// 红色
-.monochrome2{
-	background: #e04e3b;
-	border-color: #c13523;
-
-	&:hover{
-		background: #ce3e2b;
-	}
-}
-
-// 绿色
-.monochrome3{
-	background: #68c668;
-	border-color: #52a552;
-
-	&:hover{
-		background: #50b150;
-	}
-}
-
-// 黄色
-.monochrome4{
-	background: #fbb149;
-	border-color: #e1962d;
-
-	&:hover{
-		background: #f8960a;
-	}
-}
-
-/* ------------------ icon button[ 带图标的按钮 ] ------------------ */
-// base
-.u-btn-icon{
-	font-size: 0;
-
-	i,
-	span{
-		.dib();
-		vertical-align: middle;
-	}
-	
-	i{
-		width: 16px;
-		height: 16px;
-		background-color: #f00;
-	}
-
-	span{
-		font-size: 12px;
-		padding-left: 5px;
-	}
-}
-// icon类型
-.u-btn-icon-downlod{
-
-	i{
-		background: url(../images/download.png) no-repeat left center;
-	}
-}
-
-/* ------------------ 类型按钮 ------------------ */
-
-// 禁用按钮
-.btn-disable{
-	color: #fff !important;
-	cursor: default !important;
-	border-color: #a3a3a3 !important;
-	//.linearGradient(#ccc,#ccc) !important;
-	background: #ccc;
-	
-	&:hover{
-		//.linearGradient(#ccc,#ccc) !important;
-		background: #ccc;
-	}
-}
-
-// 下拉按钮
-.u-btn-type-select{
-	position: relative;
-	padding-right: 20px;	
-
-	i{
-		width: 0;
-		height: 0px;
-		border-width: 5px;
-		border-style: solid;
-		border-color: #a3a3a3 transparent transparent transparent;
-		position: absolute;
-		right: 5px;
-		top: 12px;
+	&:hover,
+	&.btn-on{
+		color:white;
+		background:#86b241;
 	}
 }
