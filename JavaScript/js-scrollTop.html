@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .m-box {
+        width: 200px;
+        height: 100px;
+        overflow: auto;
+        background: #f2f2f2;
+        margin-top: 100px;
+        margin-left: 100px;
+        /*border: 2px solid #f00;*/
+    }
+    #inner {
+        padding: 5px;
+    }
+    .a {
+        max-width: 100px;
+        min-height: 100px;
+        background: #00f;
+        overflow: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="m-box" id="box">
+        <div id="inner">
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+            <p>we</p>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+    var box = document.getElementById("box"),
+        innerBox = document.getElementById("inner"),
+        timer = null,
+        maxHt = innerBox.clientHeight - box.clientHeight;
+
+    //console.log(innerBox.clientHeight);
+    /**/
+    clearInterval(timer);
+
+    timer = setInterval(function() {
+
+        box.scrollTop++;
+
+        if (box.scrollTop >= maxHt) {
+            box.scrollTop = 0;
+        }
+
+        if (innerBox.clientHeight <= box.clientHeight) {
+            clearInterval(timer);
+        }
+        //console.log(box.scrollTop);
+    }, 1000);
+    // console.log(box.clientHeight); // 100
+    // console.log(box.offsetHeight); // 104
+    //console.log(box.style.height);
+    </script>
+</body>
+
+</html>

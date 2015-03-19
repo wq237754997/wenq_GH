@@ -1,0 +1,106 @@
+/**
+ * @FileName: HTML5 reset
+ * @author: wenq
+ * @Explan: 针对html5的重置文件,不包含低级浏览器重置
+ * 文件来源: https://github.com/murtaugh/HTML5-Reset/blob/master/assets/css/reset.css
+ */
+@import "variable";
+
+body,
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,code,
+form,fieldset,legend,input,textarea,
+p,blockquote{
+  margin:0;
+  padding:0;
+}
+
+/* ------ html5 reset ------*/
+details,summary,  //ie10及以下details,summary不是块状
+main              //ie11及以下main不是块状
+{
+  display: block;
+}
+
+audio,canvas,
+progress,video {
+  display: inline-block;//ie9及以下未定义
+  vertical-align: baseline;
+}
+
+audio:not([controls]) { // 隐藏所有没有显示控件的audio标签
+  display: none;
+  height: 0;
+}
+
+[hidden],//ie10及以下未正确显示
+template //Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+{
+  display: none;
+}
+
+/* ------ form reset ------*/
+button,
+input,
+optgroup,
+select,
+textarea{ // 继承父级字体颜色和字体复合属性
+  color: inherit;
+  font: inherit;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; // 类似按钮效果[模拟]
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; // 设置盒模型的实际大小不受border,padding的影响
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; // webkit-appearance: 改变元素外观[类似模拟]
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+/* ------ table reset ------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* ------ other reset ------*/
+a:active,
+a:hover {
+  outline: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+li{list-style: none;}

@@ -1,0 +1,31 @@
+/**
+ * @FileName: transform scale
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 2D缩放
+ */
+
+.scale(@x,@y){
+	-webkit-transform: scale(@x,@y);
+	-moz-transform: scale(@x,@y);
+	-ms-transform: scale(@x,@y);
+	-o-transform: scale(@x,@y);
+	transform: scale(@x,@y);
+};
+/*
+.scale(@x,@args)when(@args=one){
+	-webkit-transform: scale(@x);
+	-moz-transform: scale(@x);
+	-ms-transform: scale(@x);
+	-o-transform: scale(@x);
+	transform: scale(@x);
+};
+.scale(@x,@y,@args)when(@args=two){
+	-webkit-transform: scale(@x,@y);
+	-moz-transform: scale(@x,@y);
+	-ms-transform: scale(@x,@y);
+	-o-transform: scale(@x,@y);
+	transform: scale(@x,@y);
+};
+*/ 

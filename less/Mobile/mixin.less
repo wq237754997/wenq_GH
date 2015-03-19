@@ -1,0 +1,68 @@
+/**
+ * FileName: mixin
+ * @Author: wenq
+ * @Explain: 混合使用
+ */
+
+//线性渐变，只支持水平和垂直方向
+.linearGradient(@startColor,@endColor,@layout:top){
+	background-color:@endColor;
+	background-image:-webkit-linear-gradient(@layout,@startColor,@endColor);
+	background-image:-moz-linear-gradient(@layout,@startColor,@endColor);
+	background-image:-o-linear-gradient(@layout,@startColor,@endColor);
+	background-image:-ms-linear-gradient(@layout,@startColor,@endColor);
+	background-image:linear-gradient(@layout,@startColor,@endColor);
+}
+
+// 占位符 颜色设置
+.placeholder(@font_family,@color_val){
+	&::-webkit-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-moz-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+
+	&::-o-input-placeholder{
+		font-family: @font_family;
+		color:@color_val;
+	}
+	
+	&:-ms-input-placeholder{
+		color:@color_val;
+	}
+
+	&::input-placeholder{
+		color:@color_val;
+	}
+}
+
+//清楚浮动产生的影响样式
+.clearfix(){
+    zoom: 1;
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+//文本超出省略符号显示
+.toe(){
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 禁止用户选择文本
+.usn(){
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-m-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

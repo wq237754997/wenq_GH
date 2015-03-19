@@ -1,0 +1,17 @@
+/**
+ * @FileName: transition
+ * 
+ * @Author: wenq
+ *
+ * @Explain: 过渡效果
+ */
+
+/* --- @transition
+ ------------------------------------------------------------------------------ */
+.transition(@property,@duration,@timing){
+	-webkit-transition: @property @duration @timing;
+	-moz-transition: @property @duration @timing;
+	-ms-transition: @property @duration @timing;
+	-o-transition: @property @duration @timing;
+	transition: @property @duration @timing;
+}
